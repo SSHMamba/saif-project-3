@@ -2,7 +2,6 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import Movie from './Movie';
 
-
 const apiUrl = "https://api.themoviedb.org/3/discover/movie?api_key=d62e1adb9803081c0be5a74ca826bdbd";
 const searchUrl = "https://api.themoviedb.org/3/search/movie?api_key=d62e1adb9803081c0be5a74ca826bdbd&query="
 
@@ -63,11 +62,13 @@ function App() {
               poster={movie.poster_path}
               title={movie.title} 
               voteAverage={movie.vote_average}
+              overview={movie}
               {...movie}/>
           )}
         )
         : <p class="noResults">No results found. Please try again?</p>
       }
+
     </div>
     </>
   )

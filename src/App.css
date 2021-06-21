@@ -91,15 +91,35 @@ input[type=search]:focus {
   padding-bottom: 20px;
   font-weight: 700;
   font-size: 1.5rem;
+
 }
 
 .movieslist {
   display: flex;
   flex-wrap: wrap;
-  width: 1800px;
+  width: 100%;
+  max-width: 1600px;
   margin: 0 auto;
-  position: relative;
+
 }
+
+.CollapseInfo {
+    background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+
 
 .moviePoster {
   /* margin: 1rem; */
@@ -108,6 +128,8 @@ input[type=search]:focus {
   margin: 1rem auto;
   border: 1px solid rgb(43, 61, 82);
   border-radius: 20px;
+  position: relative;
+  overflow: hidden;
 }
 
 .movieInfo {
@@ -126,7 +148,25 @@ h2 {
   color:yellow;
 }
 
+.summary {
+  position: absolute;
+  bottom: -16px;
+  left: 0;
+  right: 0;
+  background-color: #061825;
+  padding: 1.5rem;
+  transform: translateX(100%);
+  transition: transform 0.4s ease-in-out;
+  line-height: 25px;
+}
 
+.moviePoster:hover .summary {
+  transform: translateX(0%);
+}
+
+.moviePoster:hover {
+box-shadow: -3px -3px 30px 5px rgb(69, 100, 172), 3px 3px 30px 5px rgb(197, 44, 52);
+}
 img {
   max-width: 100%;
   width: 300px;
