@@ -1,18 +1,4 @@
-<script type="text/javascript" src="app.js"></script>
-
 const images = "https://image.tmdb.org/t/p/w500";
-
-const FavMovie = ({
-    poster, title
-}) => {
-    return (
-        <div className="Watchlist">
-            <img src={`${images}/${poster}`} alt={title} />
-            <h2>{title}</h2>
-        </div>
-    )
-}
-
 const Movie = ( {
     id, poster, title, voteAverage
 }) => {

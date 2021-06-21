@@ -1,10 +1,9 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import Movie from './Movie';
-import firebase from './firebase';
 
 
-const apiUrl = "http://api.themoviedb.org/3/discover/movie?api_key=d62e1adb9803081c0be5a74ca826bdbd";
+const apiUrl = "https://api.themoviedb.org/3/discover/movie?api_key=d62e1adb9803081c0be5a74ca826bdbd";
 const searchUrl = "https://api.themoviedb.org/3/search/movie?api_key=d62e1adb9803081c0be5a74ca826bdbd&query="
 
 function App() {
@@ -43,7 +42,7 @@ function App() {
   return (
     <>
     <header>
-            <h1><a href="./public/index.html">watchit</a></h1>
+            <h1><a href="index.html">watchit</a></h1>
     </header>
     <form onSubmit={submitForm}>
     <i class="fas fa-search"></i>
