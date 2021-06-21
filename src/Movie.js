@@ -1,5 +1,3 @@
-<script type="text/javascript" src="app.js"></script>
-
 const images = "https://image.tmdb.org/t/p/w500";
 const Movie = ( {
     id, poster, title, voteAverage
