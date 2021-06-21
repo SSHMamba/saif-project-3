@@ -42,7 +42,7 @@ function App() {
   return (
     <>
     <header>
-            <h1><a href="public/index.html">watchit</a></h1>
+            <h1><a href="index.html">watchit</a></h1>
     </header>
     <form onSubmit={submitForm}>
     <i class="fas fa-search"></i>
