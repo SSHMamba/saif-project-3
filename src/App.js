@@ -1,6 +1,6 @@
 import './App.css';
 import { useState, useEffect } from 'react';
-import Form from './Form';
+import Search from './Search';
 import Movie from './Movie';
 import React from 'react';
 import Header from './Header';
@@ -14,7 +14,6 @@ const searchUrl = "https://api.themoviedb.org/3/search/movie?api_key=d62e1adb980
 function App() {
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState("");
-  const [userInput, setUserInput] = useState('');
 
   // Display trending movies on front page using movie API
   const listMovies= (apiUrl, key) => {
@@ -54,7 +53,7 @@ function App() {
     <body>
     <main>
    
-    <Form
+    <Search
     submitForm={submitForm}
     value={search}
     searchQuery={searchQuery}/>
@@ -78,8 +77,9 @@ function App() {
     </section>
 
       </main>
-      <Footer/>
+
       </body>
+      <Footer/>
     </>
 
   )
