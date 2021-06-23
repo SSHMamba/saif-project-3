@@ -297,3 +297,9 @@ li i:hover {
 }
 
 }
+
+@media (max-width: 420px) {
+    input[type=search]:focus {
+      width: 75%;
+}
+}
