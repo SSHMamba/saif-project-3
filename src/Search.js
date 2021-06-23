@@ -1,4 +1,4 @@
-const Form = ({submitForm, search, searchQuery}) => {
+const Search = ({submitForm, search, searchQuery}) => {
     return (
     <form onSubmit={submitForm}>
     <i class="fas fa-search"></i>
@@ -6,7 +6,7 @@ const Form = ({submitForm, search, searchQuery}) => {
     <input
       className="search"
       type="search"
-      placeholder="Search for a movie through the database.."
+      placeholder="Search for a movie.."
       value={search}
       onChange={searchQuery}
       />
@@ -14,4 +14,4 @@ const Form = ({submitForm, search, searchQuery}) => {
     )
 }
 
-export default Form;
+export default Search;
