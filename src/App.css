@@ -297,16 +297,3 @@ li i:hover {
 }
 
 }
-
-@media (max-width: 420px) {
-  .movieInfo {
-    width: 100px;
-  }
-
-
-
-  img {
-    width: 100px;
-    height: 150px;
-  }
-}
