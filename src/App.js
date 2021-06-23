@@ -15,18 +15,16 @@ function App() {
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState("");
 
-  // Display trending movies on front page using movie API
+// Fetch trending movies from the API and store it in listMovies
   const listMovies= (apiUrl, key) => {
     fetch(apiUrl)
       .then((res) => res.json())
       .then((data)=> {
-        const movieDataObjectAgain = {...data};
-        movieDataObjectAgain[key] = setMovies(data.results)
-        console.log(data.results)
-        return movieDataObjectAgain;
+        setMovies(data.results)
       })
   };
 
+// Display trending movies on front page using movie API
   useEffect(() => {
     listMovies(apiUrl);
   }, [])
@@ -35,6 +33,7 @@ function App() {
   const submitForm = (e) => {
     e.preventDefault();
   
+  // API used to search for any movie in the database
     fetch(searchUrl + search)
       .then(res => res.json())
       .then(data => {
@@ -42,14 +41,16 @@ function App() {
       })
     setSearch("");}
   
-  // Search input
+  // user search input
   const searchQuery = (e) => {
     setSearch(e.target.value)
   }
 
   return (
     <>
+
     <Header />
+
     <body>
     <main>
    
@@ -76,10 +77,11 @@ function App() {
       }
     </section>
 
-      </main>
+    </main>
+    </body>
 
-      </body>
-      <Footer/>
+    <Footer/>
+    
     </>
 
   )
