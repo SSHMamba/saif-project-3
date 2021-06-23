@@ -1,9 +1,10 @@
 import './App.css';
 import { useState, useEffect } from 'react';
+import Header from './Header';
+import Description from './Description';
 import Search from './Search';
 import Movie from './Movie';
 import React from 'react';
-import Header from './Header';
 import Footer from './Footer';
 
 
@@ -21,6 +22,7 @@ function App() {
       .then((res) => res.json())
       .then((data)=> {
         setMovies(data.results)
+        console.log(data.results);
       })
   };
 
@@ -52,6 +54,7 @@ function App() {
     <Header />
 
     <body>
+    <Description />
     <main>
    
     <Search
@@ -64,10 +67,10 @@ function App() {
         return (
               <Movie
               key={movie.key}
-              submitForm={submitForm}
               poster={movie.poster_path}
               title={movie.title} 
               voteAverage={movie.vote_average}
+              release={movie.release_date}
               overview={movie}
               {...movie}
               />
@@ -79,7 +82,6 @@ function App() {
 
     </main>
     </body>
-
     <Footer/>
     
     </>

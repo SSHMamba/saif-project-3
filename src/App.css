@@ -8,10 +8,10 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 
-body {
+html, body {
 width: 100%;
 height: 100%;
-min-height: 100%;
+min-height: 100vh;
 background-color: #835a5a;
 background-image: linear-gradient(315deg, #835a6a 0%, #0d324d 74%);
 background-attachment: fixed;
@@ -38,21 +38,28 @@ h1,a:hover {
   color: rgb(46, 178, 255);
 }
 
-
-.noResults {
-  color: white;
-  margin: 0 auto;
-  padding: 50px;
-  font-size: 2rem;
-}
-
-
 h1 {
   margin: 0 auto;
   padding: 25px;
   color: white;
   font-size: 4rem;
   letter-spacing: 5px;
+}
+
+.description {
+  font-family:'Oleo Script', cursive;;
+  width: 100%;
+  height:100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  color: white;
+  background:#0f2635;
+
 }
 
 form {
@@ -86,6 +93,13 @@ input[type=search]:focus {
   width: 25%;
   border-bottom: 2px solid rgb(209, 64, 64);
   outline: 0;
+}
+
+.noResults {
+  color: white;
+  margin: 0 auto;
+  padding: 50px;
+  font-size: 2rem;
 }
 
 .trendingHeader {
@@ -154,7 +168,7 @@ box-shadow: -3px -3px 30px 5px rgb(69, 100, 172), 3px 3px 30px 5px rgb(197, 44, 
 
 h2 {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   margin: 0;
   }
 
@@ -165,8 +179,12 @@ h2 {
 .voteStyle {
   text-align: center;
   font-weight: 700;
-  color:yellow;
-  
+  color:yellow; 
+}
+
+.release {
+  text-align: center;
+  color:greenyellow;
 }
 
 .summary {
@@ -204,17 +222,20 @@ span {
 
 Footer {
   width: 100%;
-  height: 50px;
   font-size: 25px;
-  margin: 0 auto;
   color: white;
   text-align: center;
-  padding: 10px;
-  bottom: -250px;
-  position: absolute;
   background:#0d324d;
+  bottom: 0%;
 
 }
+
+.contact {
+  font-family:'Oleo Script', cursive;
+  letter-spacing: 5px;
+  font-size: 2.5rem;
+}
+
 
 .socials {
   display: flex;
@@ -244,6 +265,6 @@ li i:hover {
   background: black;
   width: 100%;
   height: 100%;
-  margin: 0 auto;
-  font-size: 20px;
+  margin-top: auto;
+  font-size: 15px;
 }
