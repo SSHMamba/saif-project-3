@@ -9,3 +9,12 @@
     margin: 0 auto;
     display: flex;
 }
+
+.loading {
+
+  color: white;
+  margin: 0 auto;
+  padding: 50px;
+  font-size: 2rem;
+
+}

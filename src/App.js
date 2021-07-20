@@ -1,12 +1,11 @@
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import Home from './Home';
-import Header from './Header';
-import MovieDetails from './MovieDetails';
-import WatchList from './Watchlist';
+import Home from './Components/Home';
+import Header from './Components/Header';
+import MovieDetails from './Components/MovieDetails';
+import WatchList from './Components/Watchlist';
 import React from 'react';
-import Footer from './Footer';
+import Footer from './Components/Footer';
 
 function App() {
   return (
