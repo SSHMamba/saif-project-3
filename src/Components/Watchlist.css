@@ -1,0 +1,13 @@
+.listWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.listWrapper li {
+    list-style-type: none;
+}
+
+.watchlistTitle {
+    color: white;
+    padding: 25px;
+}
