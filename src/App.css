@@ -123,6 +123,11 @@ input[type=search]:focus {
 
 }
 
+.trending {
+  display: flex;
+  justify-content: center;
+  color:rgb(209, 64, 64);
+}
 .content {
   font-size: 100px;
   position: relative;

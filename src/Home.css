@@ -1,0 +1,11 @@
+.watchListButton {
+
+    color: white;
+}
+
+.watchListLink {
+    width: 200px;
+    display: inline-block;
+    margin: 0 auto;
+    display: flex;
+}

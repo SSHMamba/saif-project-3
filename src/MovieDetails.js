@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import './MovieDetails.css'
-import Search from "./Search";
+import AddToList from "./AddToList";
 
 const images = "https://image.tmdb.org/t/p/w500";
 const backdropImages = "https://image.tmdb.org/t/p/original"
@@ -62,9 +62,17 @@ const MovieDetails = (props) => {
         <p className="summary">{movie.overview}</p>
         <p className="voteStyle">Rating: {movie.vote_average}</p>
         <p className="release">Release Date: {movie.release_date}</p>
-        <a href={`https://www.youtube.com/watch?v=${video.key}`} className="trailer"><img src="https://i.imgur.com/eOqDkck.png" alt="" className="trailer"/></a>
+        <div className="mediaContainer">
+        <ul className="mediaLinks">
+          <li><a href={`https://www.youtube.com/watch?v=${video.key}`} className="trailer"><i className="fab fa-youtube"></i></a></li>
+        <li><a href={`https://www.imdb.com/title/${movie.imdb_id}`}><i class="fab fa-imdb"></i></a></li>
+        
+        </ul>
+        </div>
       </div>
-      
+      <div>
+        <AddToList movie={movie} />
+      </div>
     </div>
   );
 };

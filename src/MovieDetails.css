@@ -43,6 +43,31 @@ button:hover {
 
 }
 
+.mediaLinks {
+        margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.fa-imdb {
+    font-size: 35px;
+}
+
+.fa-imdb:hover {
+    color: yellow;
+}
+
+.fa-youtube {
+    font-size: 35px;
+
+}
+
+.fa-youtube:hover {
+    color: red;
+
+}
+
 
 .poster-image {
     padding: 150px;
