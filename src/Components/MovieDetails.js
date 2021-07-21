@@ -31,7 +31,6 @@ const MovieDetails = (props) => {
   });
 
 
-
   useEffect(() => {
     axios({
       url: `https://api.themoviedb.org/3/movie/${movieID}`,
@@ -42,14 +41,14 @@ const MovieDetails = (props) => {
       setMovie(result.data);
       console.log(result.data)
     });
-  }, [movieID]);
+  }, []);
 
   return (
     <div className="movieDetails" 
          style={{ 
           backgroundImage: `url(${backdropImages}${movie.backdrop_path})`
           }}>
-        <a href="/"><button><p> Go Back </p></button></a>
+        <a href="/"><button className="goBack"><p> Go Back </p></button></a>
         <div className="poster-image" >
         <img
           src={movie.poster_path ? `${images}${movie.poster_path}` : "https://www.movienewz.com/img/films/poster-holder.jpg"}
@@ -59,19 +58,25 @@ const MovieDetails = (props) => {
       <div className="detailsDescription" >
         <h2 className="detailTitle">{movie.title}</h2>
         <h3 className="tagline">{movie.tagline}</h3>
-        <p className="summary">{movie.overview}</p>
-        <p className="voteStyle">Rating: {movie.vote_average}</p>
+        <div className="date-runtime">
         <p className="release">Release Date: {movie.release_date}</p>
+        <p className="runtime">{movie.runtime} minutes</p>
+        </div>
+        <p className="summary">{movie.overview}</p>
+
+        <p className="voteStyle">Rating: {movie.vote_average}</p>
+        
         <div className="mediaContainer">
         <ul className="mediaLinks">
-          <li><a href={`https://www.youtube.com/watch?v=${video.key}`} className="trailer"><i className="fab fa-youtube"></i></a></li>
-        <li><a href={`https://www.imdb.com/title/${movie.imdb_id}`}><i class="fab fa-imdb"></i></a></li>
+          { video ? <li><a href={`https://www.youtube.com/watch?v=${video.key}`} className="trailer"><i className="fab fa-youtube"></i></a></li> : null}
+          
+        <li><a href={`https://www.imdb.com/title/${movie.imdb_id}`}><i className="fab fa-imdb"></i></a></li>
         
         </ul>
         </div>
       </div>
       <div>
-        <AddToList movie={movie} />
+        <AddToList addItem={movie} />
       </div>
     </div>
   );

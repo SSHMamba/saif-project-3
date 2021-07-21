@@ -141,6 +141,7 @@ input[type=search]:focus {
   position: relative;
   overflow: hidden;
   box-shadow: 5px 5px 5px black;
+  margin: 7px;
 }
 
 

@@ -38,9 +38,14 @@ button p:hover {
     color: tomato;
 }
 
-button:hover {
-    transform: scale(1.15);
-
+.goBack p {
+        border: 1.5px solid rgb(207, 115, 207);
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 15px;
+    /* background-color: rgb(121, 64, 148); */
+    transition: 0.5s ease-in-out;
+        text-align: center;
 }
 
 .mediaLinks {
@@ -112,4 +117,26 @@ button:hover {
 .trailer {
     margin-top: 30px;
 
+}
+
+.voteStyle {
+    color: white;
+    border: 1px solid rgb(65, 98, 190);
+    padding: 5px;
+    border-radius: 25px;
+    background-color: rgb(65, 98, 190);
+    width: 100px;
+    margin: 0 auto;
+}
+
+.date-runtime {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+.runtime {
+    margin-left: 100px;
+    font-style: italic;
 }

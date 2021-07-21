@@ -1,22 +1,24 @@
 import './AddToList.css'
 import firebase from "../firebase";
 
-const AddToList = ({movie}) => {
+const AddToList = ({addItem}) => {
     const dbRef = firebase.database().ref('user/lists');
 
     const addToFirebase = () => {
         dbRef.push({
-            title: movie.title,
-            poster: `https://image.tmdb.org/t/p/original${movie.poster_path}`,
-            id: movie.id
+            poster: `https://image.tmdb.org/t/p/original${addItem.poster_path}`,
+            id: addItem.id
         })
+
+
     }
+
 
     return (
         <button className="AddButton" 
                 onClick={addToFirebase}> 
                 
-        <p>Add to Watchlist </p>
+        <p>+ Add to Watchlist </p>
         
         </button>
     )

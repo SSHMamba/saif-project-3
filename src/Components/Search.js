@@ -2,11 +2,9 @@ import { useState } from 'react';
 import React from 'react';
 
 // search API used to search through database
-const searchUrl = "https://api.themoviedb.org/3/search/movie?api_key=d62e1adb9803081c0be5a74ca826bdbd&query="
-
+const searchUrl = "https://api.themoviedb.org/3/search/multi?api_key=d62e1adb9803081c0be5a74ca826bdbd&query="
 
 const Search = ({ onSearch  }) => {
-// const [movies, setMovies] = useState([]);
 const [search, setSearch] = useState("");
 
 
@@ -27,11 +25,10 @@ const [search, setSearch] = useState("");
     setSearch(e.target.value)
   }
 
-
     return (
     <form onSubmit={submitForm}>
           
-    <i class="fas fa-search"></i>
+    <i className="fas fa-search"></i>
     <label className="sr-only" htmlFor="searchMovie">Search for a movie</label>
 
     <input
