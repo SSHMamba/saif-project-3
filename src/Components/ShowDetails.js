@@ -59,8 +59,8 @@ const ShowDetails = (props) => {
         <h2 className="detailTitle">{show.name}</h2>
         <h3 className="tagline">{show.tagline}</h3>
         <div className="date-runtime">
-        <p className="release">Release Date: {show.release_date}</p>
-        <p className="runtime">{show.runtime} minutes</p>
+        <p className="release">First aired: {show.first_air_date}</p>
+        <p className="runtime">{show.episode_run_time} minutes</p>
         </div>
         <p className="summary">{show.overview}</p>
 

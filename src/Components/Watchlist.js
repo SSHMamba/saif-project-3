@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 const WatchList = () => {
     const [fireBaseList, setFireBaseList] = useState([]);
-const [tom, setTom] = useState('movies')
 
 // Display watchlist items that were added to Firebase
  useEffect( () => {
@@ -40,7 +39,7 @@ return (
         fireBaseList.map( (item) => {
             return (
                     <li key={item.key}>
-                    <Link to={`${tom}/${item.movie.id}`}>
+                    <Link to={`movie/${item.movie.id}`}>
                                     
                     { item.movie.poster ?
                     <img 

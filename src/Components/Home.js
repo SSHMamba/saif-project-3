@@ -1,5 +1,4 @@
 import Movie from "./Movie";
-import Search from "./Search";
 import Description from "./Description";
 import './Home.css'
 import { useState } from "react";
@@ -16,7 +15,9 @@ return (
         <Link to="/watchlist" className="watchListLink">
         <button className="watchListButton"><h2>Watchlist</h2></button>
         </Link>
-        <Search onSearch={setMovies} />
+        <Link to="/search">
+        <button className="searchButton"><h2>Search</h2></button>
+        </Link>
         <Movie movies={movies} onMovies={setMovies}/>
         
 
