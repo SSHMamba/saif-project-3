@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Navigation from "./Navigation";
+import './Search.css'
 
 // search API used to search through database
 const images = "https://image.tmdb.org/t/p/w500/";
@@ -24,6 +26,7 @@ const searchUrl = `https://api.themoviedb.org/3/search/${type}?api_key=d62e1adb9
       .then(res => res.json())
       .then(data => {
         setContent(data.results);
+        console.log(data.results)
       })
     setSearch("");}
   
@@ -35,6 +38,7 @@ const searchUrl = `https://api.themoviedb.org/3/search/${type}?api_key=d62e1adb9
   console.log(type)
     return (
       <div>
+    <Navigation />
     <form onSubmit={submitForm}>
           
     <i className="fas fa-search"></i>
@@ -51,33 +55,41 @@ const searchUrl = `https://api.themoviedb.org/3/search/${type}?api_key=d62e1adb9
 
     </form>
 
-          <button onClick={event => {setType("tv")
-      event.preventDefault();
-      }}>
+      <div>
+        <ul className="searchCategories">
+          <li>
+                <button onClick={event => {setType("tv")
+                  event.preventDefault();
+                  }}>
 
-        <p>TV Shows</p>
-    </button>
-
-      <button onClick={event => {setType("movie")
-      event.preventDefault();
-      }}>
-
-        <p>Movies</p>
-    </button>
+                  <p>TV Shows</p>
+                 </button>
+        </li>
 
 
+          <li>
+                <button onClick={event => {setType("movie")
+                event.preventDefault();
+                }}>
 
+                  <p>Movies</p>
+                </button>
+          </li>
+        </ul>
+        </div>
+
+                  
     <section className="movieslist">
-
+      
       {content.length > 0 ? content.map((media) => {
         return (
         
         <Link to={`${type}/${media.id}`}>
-
         <div className="moviePoster">
             <img src={media.poster_path ? `${images}${media.poster_path}` : "https://www.movienewz.com/img/films/poster-holder.jpg"} alt={media.title} />
             <div className="movieInfo">
                 <h2 className="title">{media.title || media.name}</h2>
+                <p className="seasons"></p>
                 <p className="summary">{media.overview}</p>
                 <p className="key">{media.id}</p>
             </div>

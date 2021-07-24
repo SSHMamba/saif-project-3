@@ -242,7 +242,7 @@ Footer {
   font-family: 'Roboto', serif;
   font-weight: bold;
   letter-spacing: 5px;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
 }
 
 
@@ -262,8 +262,30 @@ footer ul {
 
 }
 
+.tmdb {
+  font-family: 'Roboto', serif;
+}
+
+.credits {
+  font-size: 15px;
+  font-family: 'Roboto', serif;
+}
+
+
+.otherLinks {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.otherLinks li {
+  font-size: 15px;
+  text-align: center;
+}
+
 ul li {
   padding: 20px;
+  font-size: 20px;
 }
 
 li i:hover {

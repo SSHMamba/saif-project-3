@@ -1,0 +1,37 @@
+.categories {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    position: relative;
+    top: 60px;
+}
+
+.categories ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.categories li p {
+    border: 2px solid rgb(255, 255, 255);
+    padding: 15px;
+}
+
+.fade-item {
+    transition: 2s all ease-in-out;
+    opacity: 0;
+}
+
+.slideUp {
+    animation: slideInFromDown 1.5s ease-in-out;
+}
+
+@keyframes slideInFromDown {
+   0% {
+   transform: translateY(100%);
+   opacity: 0;
+   }
+   100% {
+   transform: translateY(0);
+   opacity: 1;
+   }
+}

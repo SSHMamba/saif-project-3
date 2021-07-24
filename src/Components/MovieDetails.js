@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import './MovieDetails.css'
 import AddToList from "./AddToList";
+import Navigation from "./Navigation";
 
 const images = "https://image.tmdb.org/t/p/w500";
 const backdropImages = "https://image.tmdb.org/t/p/original"
@@ -44,10 +45,14 @@ const MovieDetails = (props) => {
   }, []);
 
   return (
-    <div className="movieDetails" 
+    <section>
+    <Navigation />
+    <div className="movieDetails"
+    
          style={{ 
           backgroundImage: `url(${backdropImages}${movie.backdrop_path})`
           }}>
+
         <a href="/"><button className="goBack"><p> Go Back </p></button></a>
         <div className="poster-image" >
         <img
@@ -79,6 +84,8 @@ const MovieDetails = (props) => {
         <AddToList addItem={movie} />
       </div>
     </div>
+    {/* <div className="bannerFadeBottom"/> */}
+    </section>
   );
 };
 

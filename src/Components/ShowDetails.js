@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import './MovieDetails.css'
-import AddToList from "./AddToList";
+import AddToListTV from "./AddToListTV";
+import Navigation from "./Navigation";
 
 const images = "https://image.tmdb.org/t/p/w500";
 const backdropImages = "https://image.tmdb.org/t/p/original"
@@ -11,7 +12,7 @@ const backdropImages = "https://image.tmdb.org/t/p/original"
 
 const ShowDetails = (props) => {
   const [show, setShows] = useState({});
-//   const [video, setVideo] = useState({});
+  const [video, setVideo] = useState({});
     
   
   
@@ -19,16 +20,16 @@ const ShowDetails = (props) => {
   let { showID } = props.match.params;
 
 
-//     useEffect(() => {
-//     axios({
-//       url: `https://api.themoviedb.org/3/movie/${movieID}/videos?api_key=d62e1adb9803081c0be5a74ca826bdbd&language=en-US`,
-//       params: {
-//         api_key: "d62e1adb9803081c0be5a74ca826bdbd",
-//       },
-//     }).then((videolink) => {
-//       setVideo(videolink.data.results[0]);
-//     });
-//   });
+    useEffect(() => {
+    axios({
+      url: `https://api.themoviedb.org/3/tv/${showID}/videos?api_key=d62e1adb9803081c0be5a74ca826bdbd&language=en-US`,
+      params: {
+        api_key: "d62e1adb9803081c0be5a74ca826bdbd",
+      },
+    }).then((videoLink) => {
+      setVideo(videoLink.data.results[0]);
+    });
+  });
 
 
   useEffect(() => {
@@ -44,6 +45,8 @@ const ShowDetails = (props) => {
   }, []);
 
   return (
+    <section>
+      <Navigation />
     <div className="movieDetails" 
          style={{ 
           backgroundImage: `url(${backdropImages}${show.backdrop_path})`
@@ -60,7 +63,9 @@ const ShowDetails = (props) => {
         <h3 className="tagline">{show.tagline}</h3>
         <div className="date-runtime">
         <p className="release">First aired: {show.first_air_date}</p>
+        <p className="seasons">{show.number_of_seasons} seasons</p>
         <p className="runtime">{show.episode_run_time} minutes</p>
+
         </div>
         <p className="summary">{show.overview}</p>
 
@@ -68,7 +73,7 @@ const ShowDetails = (props) => {
         
         <div className="mediaContainer">
         <ul className="mediaLinks">
-          {/* { video ? <li><a href={`https://www.youtube.com/watch?v=${video.key}`} className="trailer"><i className="fab fa-youtube"></i></a></li> : null} */}
+          { video ? <li><a href={`https://www.youtube.com/watch?v=${video.key}`} className="trailer"><i className="fab fa-youtube"></i></a></li> : null}
           
         <li><a href={`https://www.imdb.com/title/${show.imdb_id}`}><i className="fab fa-imdb"></i></a></li>
         
@@ -76,9 +81,10 @@ const ShowDetails = (props) => {
         </div>
       </div>
       <div>
-        <AddToList addItem={show} />
+        <AddToListTV addItem={show} />
       </div>
     </div>
+    </section>
   );
 };
 

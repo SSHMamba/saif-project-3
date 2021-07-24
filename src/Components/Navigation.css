@@ -1,0 +1,24 @@
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  background: rgb(10, 19, 36);
+}
+
+.navigation ul {
+  list-style: none;
+  display: flex;
+}
+
+
+.navigation ul li h2 {
+      color: white;
+    font-family: 'Roboto', serif;
+    font-weight: 700;
+    font-size: 20px;
+        transition: 0.5s ease-in-out;
+}
+.navigation h2:hover {
+    color: rgb(209, 64, 64);
+
+}

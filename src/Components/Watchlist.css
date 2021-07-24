@@ -1,13 +1,64 @@
-.listWrapper {
+.listWrapper, .tvListWrapper {
     display: flex;
     justify-content: center;
 }
 
-.listWrapper li {
+.listWrapper, .tvListWrapper li {
     list-style-type: none;
 }
 
-.watchlistTitle {
+.watchListTitle {
     color: white;
     padding: 25px;
+    font-size: 45px;
+    display: flex;
+    margin-left: 400px;
+    padding-top: 45px;
+}
+
+.watchListCategories {
+    padding: 50px;
+    color: white;
+    font-size: 45px;
+}
+
+.listWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 45px;
+}
+
+.listWrapper li {
+    padding: 5px 1px;
+}
+
+.info {
+      color: white;
+  margin: 1rem auto;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 5px 5px 5px black;
+  margin: 7px;
+}
+
+.info:hover {
+    box-shadow: -3px -3px 30px 5px rgb(69, 100, 172), 3px 3px 30px 5px rgb(197, 44, 52);
+}
+
+.removeButton {
+    position: relative;
+    display: inline-block;
+    bottom: 400px;
+    right: 80px;
+    color: white;
+}
+
+.removeButton span {
+    border: 1px solid black;
+    background: black;
+    border-radius: 25px;
 }

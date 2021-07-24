@@ -1,8 +1,8 @@
-import './AddToList.css'
-import firebase from "../firebase";
+import './AddToList.css';
+import firebase from 'firebase';
 
-const AddToList = ({addItem}) => {
-    const dbRef = firebase.database().ref('user/lists/movies');
+const AddToListTV = ({addItem}) => {
+    const dbRef = firebase.database().ref('user/lists/tv');
 
     const addToFirebase = () => {
         dbRef.push({
@@ -25,4 +25,4 @@ const AddToList = ({addItem}) => {
 
  }
 
- export default AddToList;
+ export default AddToListTV;
