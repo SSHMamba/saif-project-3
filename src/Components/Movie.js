@@ -6,7 +6,8 @@ import './Movie.css'
 const images = "https://image.tmdb.org/t/p/w500/";
 
 const Movie = ( { movies, onMovies }) => {
-const [url, setUrl] = useState('https://api.themoviedb.org/3/movie/popular?api_key=d62e1adb9803081c0be5a74ca826bdbd')
+const [url, setUrl] = useState(`https://api.themoviedb.org/3/movie/popular?api_key=d62e1adb9803081c0be5a74ca826bdbd`)
+
 let [mediaType, setMediaType] = useState('movie')
 
 

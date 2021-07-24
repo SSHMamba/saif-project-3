@@ -1,18 +1,25 @@
 .AddButton p {
-    border: 1.5px solid rgb(207, 115, 207);
+    border: 6.5px solid rgb(17, 67, 107);
+    background:rgb(21, 100, 165);
     padding: 15px;
-    border-radius: 15px;
+    border-radius: 25px;
     font-size: 15px;
     /* background-color: rgb(121, 64, 148); */
     transition: 0.5s ease-in-out;
         text-align: center;
 }
 
-.AddButton:hover {
-    transform: none;
+.AddButton p:hover {
+        color: black;
+        background:rgba(70, 246, 143, 0.746)
 }
 
 .AddButton {
-    position: relative;
-    left: 500px;
+    width: 250px;
+    margin: 0 auto;
+    transition: 0.5s ease-in-out;
+}
+
+.AddButton:hover {
+
 }

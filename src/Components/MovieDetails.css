@@ -26,6 +26,7 @@
 
 }
 
+
 .bannerFadeBottom {
     height: 7.4rem;
     background-image: linear-gradient(180deg, transparent, rgb(5, 5, 5), rgb(19, 18, 18));
@@ -63,9 +64,11 @@ button p:hover {
     border-radius: 15px;
     font-size: 15px;
     /* background-color: rgb(121, 64, 148); */
-    transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in;
         text-align: center;
 }
+
+
 
 .mediaLinks {
         margin: 0 auto;

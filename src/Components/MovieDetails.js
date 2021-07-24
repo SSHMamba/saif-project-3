@@ -79,9 +79,11 @@ const MovieDetails = (props) => {
         
         </ul>
         </div>
-      </div>
-      <div>
         <AddToList addItem={movie} />
+      </div>
+      
+      <div>
+
       </div>
     </div>
     {/* <div className="bannerFadeBottom"/> */}
