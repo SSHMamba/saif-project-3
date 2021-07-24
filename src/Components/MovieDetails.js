@@ -47,6 +47,7 @@ const MovieDetails = (props) => {
   return (
     <section>
     <Navigation />
+        <div className="bannerFadeUp"/>
     <div className="movieDetails"
     
          style={{ 
@@ -86,7 +87,7 @@ const MovieDetails = (props) => {
 
       </div>
     </div>
-    {/* <div className="bannerFadeBottom"/> */}
+    <div className="bannerFadeBottom"/>
     </section>
   );
 };

@@ -28,6 +28,15 @@ console.log(mediaType)
 
     <div className="categories">
       <ul>
+        <li>
+              <form onClick={event => {setMediaType('movie')
+              event.preventDefault();
+              }}>
+              <button onClick={event => {setUrl(`https://api.themoviedb.org/3/movie/popular?api_key=d62e1adb9803081c0be5a74ca826bdbd&`)
+                      event.preventDefault();
+              }}><p>Trending Movies</p></button>
+              </form>
+        </li>
           <li>
             
               <form onClick={event => {setMediaType('tv')
@@ -43,15 +52,7 @@ console.log(mediaType)
               </form>
       </li>
     
-        <li>
-              <form onClick={event => {setMediaType('movie')
-              event.preventDefault();
-              }}>
-              <button onClick={event => {setUrl(`https://api.themoviedb.org/3/movie/popular?api_key=d62e1adb9803081c0be5a74ca826bdbd&`)
-                      event.preventDefault();
-              }}><p>Trending Movies</p></button>
-              </form>
-        </li>
+
       </ul>
 
       </div>
@@ -64,11 +65,11 @@ console.log(mediaType)
 
         <div className="moviePoster slideUp">
             <img src={movie.poster_path ? `${images}${movie.poster_path}` : "https://www.movienewz.com/img/films/poster-holder.jpg"} alt={movie.title} />
-            <div className="movieInfo" >
+             <div className="movieInfo" >
                 <h2 className="title">{movie.title || movie.name}</h2>
                 <p className="summary">{movie.overview}</p>
                 <p className="key">{movie.id}</p>
-            </div>
+            </div> 
 
         </div>
 
