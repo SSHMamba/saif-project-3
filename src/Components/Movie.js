@@ -18,7 +18,8 @@ useEffect(() => {
         onMovies(data.results)
         console.log(data.results)
       })
-  }, [url]);
+  });
+
 
 
 

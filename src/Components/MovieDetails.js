@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import './MovieDetails.css'
+import '../App.css'
 import AddToList from "./AddToList";
 import Navigation from "./Navigation";
+import PreviousPage from "./PreviousPage";
 
 const images = "https://image.tmdb.org/t/p/w500";
 const backdropImages = "https://image.tmdb.org/t/p/original"
@@ -39,10 +41,15 @@ const MovieDetails = (props) => {
         api_key: "d62e1adb9803081c0be5a74ca826bdbd",
       },
     }).then((result) => {
-      setMovie(result.data);
+      setMovie(result.data)
+      window.scroll({
+        top: 0,
+        bottom: 0,
+        behavior: 'smooth'
+      })
       console.log(result.data)
     });
-  }, []);
+  }, [movieID]);
 
   return (
     <section>
@@ -54,7 +61,8 @@ const MovieDetails = (props) => {
           backgroundImage: `url(${backdropImages}${movie.backdrop_path})`
           }}>
 
-        <a href="/"><button className="goBack"><p> Go Back </p></button></a>
+        {/* <a href="/"><button className="goBack"><p> Go Back </p></button></a> */}
+        <PreviousPage />
         <div className="poster-image" >
         <img
           src={movie.poster_path ? `${images}${movie.poster_path}` : "https://www.movienewz.com/img/films/poster-holder.jpg"}
@@ -80,7 +88,7 @@ const MovieDetails = (props) => {
         
         </ul>
         </div>
-        <AddToList addItem={movie} />
+        <AddToList addItem={movie} className="addButton"/>
       </div>
       
       <div>

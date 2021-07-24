@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import '../App.css'
 import './Navigation.css'
 
 function Navigation() {

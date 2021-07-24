@@ -8,10 +8,12 @@ import './Search.css'
 const images = "https://image.tmdb.org/t/p/w500/";
 
 
-const Search = ({  }) => {
+const Search = () => {
 const [search, setSearch] = useState("");
 const [content, setContent] = useState([])
 const [type, setType] = useState("movie");
+const [isTV, setIsSelectedTV] = useState(null);
+const [isMovie, setIsSelectedMovie] = useState(null);
 const searchUrl = `https://api.themoviedb.org/3/search/${type}?api_key=d62e1adb9803081c0be5a74ca826bdbd&query=`
 
 
@@ -36,47 +38,58 @@ const searchUrl = `https://api.themoviedb.org/3/search/${type}?api_key=d62e1adb9
   }
   console.log(searchUrl)
   console.log(type)
+  console.log(isTV)
     return (
-      <div>
-    <Navigation />
-    <form onSubmit={submitForm}>
+    <div>
+      <Navigation />
+
+      <form onSubmit={submitForm}>
           
-    <i className="fas fa-search"></i>
-    <label className="sr-only" htmlFor="searchMovie">Search for a movie</label>
+          <i className="fas fa-search"></i>
+          <label className="sr-only" htmlFor="searchMovie">Search for a movie</label>
 
-    <input
-      className="search"
-      type="search"
-      placeholder="Search for a movie or show.."
-      value={search}
-      onChange={searchQuery}
-      />
+          <input
+            className="search"
+            type="search"
+            placeholder="Search for a movie or show.."
+            value={search}
+            onChange={searchQuery}
+            />
 
 
-    </form>
+     </form>
 
-      <div>
+    <div>
+
+        
+        <p className="selectCategory">Select a category</p>
+
         <ul className="searchCategories">
           <li>
                 <button onClick={event => {setType("tv")
                   event.preventDefault();
+                  setIsSelectedTV(true);
+                  setIsSelectedMovie(false)
                   }}>
 
-                  <p>TV Shows</p>
+                  { isTV ? <p className="searchSelectButton">TV Shows</p> : <p>TV Shows</p>}
                  </button>
-        </li>
+          </li>
 
 
           <li>
                 <button onClick={event => {setType("movie")
                 event.preventDefault();
+                setIsSelectedMovie(true);
+                setIsSelectedTV(false)
                 }}>
 
-                  <p>Movies</p>
+                {  isMovie  ? <p className="searchSelectButton2">Movies</p> : <p>Movies</p>}
                 </button>
           </li>
+        
         </ul>
-        </div>
+    </div>
 
                   
     <section className="movieslist">
@@ -85,7 +98,7 @@ const searchUrl = `https://api.themoviedb.org/3/search/${type}?api_key=d62e1adb9
         return (
         
         <Link to={`${type}/${media.id}`}>
-        <div className="moviePoster">
+        <div className="moviePoster slideUp">
             <img src={media.poster_path ? `${images}${media.poster_path}` : "https://www.movienewz.com/img/films/poster-holder.jpg"} alt={media.title} />
             <div className="movieInfo">
                 <h2 className="title">{media.title || media.name}</h2>
@@ -99,7 +112,7 @@ const searchUrl = `https://api.themoviedb.org/3/search/${type}?api_key=d62e1adb9
         </Link>
           
         );
-      }): <p class="noResults">Search for a TV Show or a Movie</p>}
+      }): null}
       
 
         </section>

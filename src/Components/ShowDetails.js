@@ -3,6 +3,7 @@ import axios from "axios";
 import './MovieDetails.css'
 import AddToListTV from "./AddToListTV";
 import Navigation from "./Navigation";
+import PreviousPage from "./PreviousPage";
 
 const images = "https://image.tmdb.org/t/p/w500";
 const backdropImages = "https://image.tmdb.org/t/p/original"
@@ -40,18 +41,24 @@ const ShowDetails = (props) => {
       },
     }).then((result) => {
       setShows(result.data);
+      window.scroll({
+        top: 0,
+        bottom: 0,
+        behavior: 'smooth'
+      })
       console.log(result.data)
     });
-  }, []);
+  }, [showID]);
 
   return (
     <section>
       <Navigation />
+              <div className="bannerFadeUp"/>
     <div className="movieDetails" 
          style={{ 
           backgroundImage: `url(${backdropImages}${show.backdrop_path})`
           }}>
-        <a href="/"><button className="goBack"><p> Go Back </p></button></a>
+        <PreviousPage />
         <div className="poster-image" >
         <img
           src={show.poster_path ? `${images}${show.poster_path}` : "https://www.movienewz.com/img/films/poster-holder.jpg"}
@@ -79,11 +86,13 @@ const ShowDetails = (props) => {
         
         </ul>
         </div>
+                <AddToListTV addItem={show} className="addButton"/>
       </div>
       <div>
-        <AddToListTV addItem={show} />
+
       </div>
     </div>
+        <div className="bannerFadeBottom"/>
     </section>
   );
 };

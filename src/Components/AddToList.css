@@ -14,12 +14,44 @@
         background:rgba(70, 246, 143, 0.746)
 }
 
-.AddButton {
+.AddedButton p {
+    border: 6.5px solid rgb(17, 67, 107);
+    background:rgb(70, 246, 143, 0.746);
+    padding: 15px;
+    border-radius: 25px;
+    font-size: 15px;
+    color: black;
+    /* background-color: rgb(121, 64, 148); */
+    transition: 0.5s ease-in-out;
+        text-align: center;
+}
+
+.AddedButton p:hover {
+        color: black;
+        background:rgba(70, 246, 143, 0.746)
+}
+
+.AddButton, .AddedButton {
     width: 250px;
     margin: 0 auto;
     transition: 0.5s ease-in-out;
 }
 
-.AddButton:hover {
+.AddedButton {
+    cursor:auto;
+}
 
+.AddButton {
+    animation: scroll-fade 2s ease-in-out;
+}
+
+@keyframes scroll-fade {
+    0% {
+        opacity: 0;
+        transform: translateY(230%);
+    }
+    100% {
+        opacit: 1;
+        transform: translateY(0);
+    }
 }

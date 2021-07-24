@@ -66,7 +66,7 @@ return (
         fireBaseListMovies.map( (item) => {
             return (
 
-                    <li show={item.show} >
+                    <li show={item.show} className="slideUp">
                         
                     <Link to={`movie/${item.movie.id}`}>
                                     
@@ -102,7 +102,7 @@ return (
         {
             fireBaseListTV.map( (itemTV) => {
                 return (
-                    <li key={itemTV.key}>
+                    <li key={itemTV.key} className="slideUp">
                     <Link to={`tv/${itemTV.tv.id}`}>
                                     
                     { itemTV.tv.poster ?

@@ -43,10 +43,27 @@
   overflow: hidden;
   box-shadow: 5px 5px 5px black;
   margin: 7px;
+    transition: 0.8s ease-in-out;
 }
 
 .info:hover {
-    box-shadow: -3px -3px 30px 5px rgb(69, 100, 172), 3px 3px 30px 5px rgb(197, 44, 52);
+    box-shadow: -3px -3px 30px 5px rgb(8, 12, 20), 3px 3px 15px 5px rgb(15, 3, 4);
+    transform: scale(1.2);
+}
+
+.slideUp {
+    animation: slideInFromDown 1.5s ease-in-out;
+}
+
+@keyframes slideInFromDown {
+   0% {
+   transform: translateY(100%);
+   opacity: 0;
+   }
+   100% {
+   transform: translateY(0);
+   opacity: 1;
+   }
 }
 
 .removeButton {

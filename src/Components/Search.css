@@ -3,3 +3,38 @@
     justify-content: center;
     list-style-type: none;
 }
+
+.searchSelectButton {
+    border: 1px solid white;
+    padding: 5px;
+}
+
+.searchSelectButton2 {
+    border: 1px solid white;
+    padding: 5px;
+}
+
+.selectCategory {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    color: white;
+    padding-top: 25px;
+    position: relative;
+    top: 35px;
+}
+
+.slideUp {
+    animation: slideInFromDown 1.5s ease-in-out;
+}
+
+@keyframes slideInFromDown {
+   0% {
+   transform: translateY(100%);
+   opacity: 0;
+   }
+   100% {
+   transform: translateY(0);
+   opacity: 1;
+   }
+}
