@@ -23,6 +23,7 @@
     background-repeat: no-repeat;
     background-position: center;
     animation: shrink 4s ease-in-out;
+    justify-content: center;
 
 }
 
@@ -207,4 +208,33 @@ button p:hover {
 
 .seasons {
     margin-left: 75px;
+}
+
+.similarWrapper {
+    display: flex;
+    justify-content: center;
+
+    margin: 0 auto;
+    padding-bottom: 200px;
+    max-width: 100%;
+}
+
+.similarWrapper .moviePoster img {
+    width: 500px;
+    height: 300px;
+    
+}
+
+.similarWrapper .moviePoster {
+    margin: 25px;
+
+}
+
+.similarWrapper .movieInfo {
+    width: 500px;
+}
+
+.similarWrapper .runtime {
+    color: white;
+    font-family: 'Roboto', serif;
 }

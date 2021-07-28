@@ -2,7 +2,7 @@ import firebase from "../firebase";
 import { useState, useEffect } from "react";
 import './Watchlist.css'
 import { Link } from 'react-router-dom';
-import Navigation from "./Navigation";
+import Navigation from "../Components/Navigation";
 
 
 const WatchList = () => {
@@ -57,9 +57,9 @@ const removeFromTVList = (fireBaseItem) => {
 return (
     <div>
              <Navigation />   
-    <h2 className="watchListTitle">watchlist</h2>
+    <h2 className="watchListTitle">Watchlist</h2>
 
-    <h2 className="watchListCategories">movies</h2>
+    <h2 className="watchListCategories">Movies</h2>
     <ul className="listWrapper">
 
         {
@@ -96,7 +96,7 @@ return (
 }
 
     </ul>
-        <h2 className="watchListCategories">tv shows</h2>
+        <h2 className="watchListCategories">TV Shows</h2>
     <ul className="listWrapper">
 
         {

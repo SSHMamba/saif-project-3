@@ -1,22 +1,23 @@
 import { useState } from 'react';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Navigation from "./Navigation";
+import Navigation from "../Components/Navigation";
 import './Search.css'
+import Banner from '../Components/Banner';
+import BannerTV from '../Components/BannerTV';
 
 // search API used to search through database
 const images = "https://image.tmdb.org/t/p/w500/";
 
 
-const Search = () => {
+const Search = (media, setMedia) => {
 const [search, setSearch] = useState("");
-const [content, setContent] = useState([])
+const [content, setContent] = useState([]);
+
 const [type, setType] = useState("movie");
 const [isTV, setIsSelectedTV] = useState(null);
 const [isMovie, setIsSelectedMovie] = useState(null);
 const searchUrl = `https://api.themoviedb.org/3/search/${type}?api_key=d62e1adb9803081c0be5a74ca826bdbd&query=`
-
-
 
  // Search form that fetches search API and returns results
   const submitForm = (e) => {
@@ -28,21 +29,33 @@ const searchUrl = `https://api.themoviedb.org/3/search/${type}?api_key=d62e1adb9
       .then(res => res.json())
       .then(data => {
         setContent(data.results);
-        console.log(data.results)
+
       })
-    setSearch("");}
+    setSearch("")
+
+}
   
   // user search input
   const searchQuery = (e) => {
     setSearch(e.target.value)
   }
-  console.log(searchUrl)
-  console.log(type)
-  console.log(isTV)
+  // console.log(searchUrl)
+  // console.log(type)
+  // console.log(isTV)
+
+
+
+
+
+
+
+
+
+
     return (
     <div>
       <Navigation />
-
+     {isTV ? <BannerTV /> : <Banner />} 
       <form onSubmit={submitForm}>
           
           <i className="fas fa-search"></i>
@@ -62,7 +75,7 @@ const searchUrl = `https://api.themoviedb.org/3/search/${type}?api_key=d62e1adb9
     <div>
 
         
-        <p className="selectCategory">Select a category</p>
+        {/* <p className="selectCategory">Select a category</p> */}
 
         <ul className="searchCategories">
           <li>
@@ -90,6 +103,10 @@ const searchUrl = `https://api.themoviedb.org/3/search/${type}?api_key=d62e1adb9
         
         </ul>
     </div>
+    <div>
+
+    </div>
+
 
                   
     <section className="movieslist">

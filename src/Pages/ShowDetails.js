@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import './MovieDetails.css'
-import AddToListTV from "./AddToListTV";
-import Navigation from "./Navigation";
-import PreviousPage from "./PreviousPage";
+import AddToListTV from "../Components/AddToListTV";
+import Navigation from "../Components/Navigation";
+import PreviousPage from "../Components/PreviousPage";
+import { Link } from "react-router-dom";
 
 const images = "https://image.tmdb.org/t/p/w500";
 const backdropImages = "https://image.tmdb.org/t/p/original"
@@ -14,12 +15,25 @@ const backdropImages = "https://image.tmdb.org/t/p/original"
 const ShowDetails = (props) => {
   const [show, setShows] = useState({});
   const [video, setVideo] = useState({});
+  const [similar, setSimilar] = useState([]);
     
   
   
   // modify url to grab any movie ID from api  
   let { showID } = props.match.params;
 
+
+    useEffect(() => {
+      axios({
+        url: `https://api.themoviedb.org/3/tv/${showID}/recommendations?api_key=d62e1adb9803081c0be5a74ca826bdbd`,
+        params: {
+          api_key: "d62e1adb9803081c0be5a74ca826bdbd",
+        }
+      }).then((similarTV) => {
+        setSimilar(similarTV.data.results);
+        console.log(similarTV.data.results);
+      })
+    }, [showID])
 
     useEffect(() => {
     axios({
@@ -46,12 +60,20 @@ const ShowDetails = (props) => {
         bottom: 0,
         behavior: 'smooth'
       })
-      console.log(result.data)
+      // console.log(result.data)
     });
   }, [showID]);
 
+  const reloadPage = () => {
+  setTimeout(function(){
+   window.location.reload(1);
+}, 1000);
+  }
+
   return (
+
     <section>
+
       <Navigation />
               <div className="bannerFadeUp"/>
     <div className="movieDetails" 
@@ -86,14 +108,36 @@ const ShowDetails = (props) => {
         
         </ul>
         </div>
-                <AddToListTV addItem={show} className="addButton"/>
+                <button onClick={reloadPage}><AddToListTV addItem={show} className="addButton"/></button>
       </div>
       <div>
 
       </div>
     </div>
         <div className="bannerFadeBottom"/>
+        <div className="similarWrapper">
+          {similar.length > 0 ? similar.slice(0,6).map((show) => {
+        return (
+        
+        <Link to={`${show.id}`}>
+
+        <div className="moviePoster slideUp">
+            <img src={show.backdrop_path ? `${images}${show.backdrop_path}` : "https://www.movienewz.com/img/films/poster-holder.jpg"} alt={show.title} />
+             <div className="movieInfo" >
+                <h2 className="title">{show.title || show.name}</h2>
+                <p className="summary">{show.overview}</p>
+            </div> 
+
+        </div>
+
+        </Link>
+          
+        );
+      }): null}
+        </div>
+
     </section>
+
   );
 };
 

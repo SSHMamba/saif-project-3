@@ -2,9 +2,10 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import './MovieDetails.css'
 import '../App.css'
-import AddToList from "./AddToList";
-import Navigation from "./Navigation";
-import PreviousPage from "./PreviousPage";
+import AddToList from "../Components/AddToList";
+import Navigation from "../Components/Navigation";
+import PreviousPage from "../Components/PreviousPage";
+import { Link } from "react-router-dom";
 
 const images = "https://image.tmdb.org/t/p/w500";
 const backdropImages = "https://image.tmdb.org/t/p/original"
@@ -15,12 +16,26 @@ const backdropImages = "https://image.tmdb.org/t/p/original"
 const MovieDetails = (props) => {
   const [movie, setMovie] = useState({});
   const [video, setVideo] = useState({});
-    
+  const [similar, setSimilar] = useState([]);
   
   
   // modify url to grab any movie ID from api  
   let { movieID } = props.match.params;
 
+
+      useEffect(() => {
+      axios({
+        url: `https://api.themoviedb.org/3/movie/${movieID}/recommendations?api_key=d62e1adb9803081c0be5a74ca826bdbd&language=en-US&page=1`,
+        params: {
+          api_key: "d62e1adb9803081c0be5a74ca826bdbd",
+        }
+      }).then((similarMovie) => {
+        setSimilar(similarMovie.data.results);
+        console.log(similarMovie.data.results);
+                    // return setSimilar();
+      })
+
+    }, [movieID])
 
     useEffect(() => {
     axios({
@@ -47,9 +62,15 @@ const MovieDetails = (props) => {
         bottom: 0,
         behavior: 'smooth'
       })
-      console.log(result.data)
+      // console.log(result.data)
     });
   }, [movieID]);
+
+    const reloadPage = () => {
+  setTimeout(function(){
+   window.location.reload(1);
+}, 1000);
+  }
 
   return (
     <section>
@@ -88,7 +109,7 @@ const MovieDetails = (props) => {
         
         </ul>
         </div>
-        <AddToList addItem={movie} className="addButton"/>
+        <button onClick={reloadPage}><AddToList addItem={movie} className="addButton"/></button>
       </div>
       
       <div>
@@ -96,6 +117,26 @@ const MovieDetails = (props) => {
       </div>
     </div>
     <div className="bannerFadeBottom"/>
+    <div className="similarWrapper">
+          {similar.length > 0 ? similar.slice(0, 6).map((movie) => {
+        return (
+        
+        <Link to={`${movie.id}`}>
+
+        <div className="moviePoster slideUp">
+            <img src={movie.backdrop_path ? `${images}${movie.backdrop_path}` : "https://www.movienewz.com/img/films/poster-holder.jpg"} alt={movie.title} />
+             <div className="movieInfo" >
+                <h2 className="title">{movie.title || movie.name}</h2>
+                <p className="summary">{movie.overview}</p>
+            </div> 
+
+        </div>
+
+        </Link>
+          
+        );
+      }): null}
+        </div>
     </section>
   );
 };

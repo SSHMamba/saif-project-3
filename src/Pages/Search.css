@@ -2,24 +2,52 @@
     display: flex;
     justify-content: center;
     list-style-type: none;
+    position: relative;
+    bottom: 60px;
+}
+
+.selectCategory {
+    font-size:20px; 
 }
 
 .searchSelectButton {
     border: 1px solid white;
-    padding: 5px;
+    padding: 10px;
+        z-index: 1000;
+    position: relative;
+
 }
 
 .searchSelectButton2 {
     border: 1px solid white;
-    padding: 5px;
+        padding: 10px;
+
+        z-index: 1000;
+    position: relative;
 }
 
+ul li {
+
+     z-index: 1000;
+    position: relative;
+}
+
+ul li p {
+    font-size: 35px;
+    letter-spacing: 1.5px;
+}
+
+
+
+form {
+    z-index: 1000;
+    position: relative;
+}
 .selectCategory {
     margin: 0 auto;
     display: flex;
     justify-content: center;
     color: white;
-    padding-top: 25px;
     position: relative;
     top: 35px;
 }

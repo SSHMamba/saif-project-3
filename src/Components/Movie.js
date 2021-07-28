@@ -16,14 +16,14 @@ useEffect(() => {
       .then((res) => res.json())
       .then((data)=> {
         onMovies(data.results)
-        console.log(data.results)
+        // console.log(data.results)
       })
   });
 
 
 
 
-console.log(mediaType)
+// console.log(mediaType)
     return (
     <section className="homePage">
 
@@ -77,7 +77,7 @@ console.log(mediaType)
         </Link>
           
         );
-      }): <p class="noResults">No results found. Please try again?</p>}
+      }): null}
 
         </section>
       </section>

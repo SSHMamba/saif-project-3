@@ -2,7 +2,7 @@ import './AddToList.css'
 import firebase from "../firebase";
 import { useState } from 'react';
 
-const AddToListTV = ({addItem}) => {
+const AddToListTV = ({addItem, reloadPage}) => {
 const [added, setAdded] = useState(true);
 
     const dbRef = firebase.database().ref('user/lists/tv');
@@ -10,7 +10,8 @@ const [added, setAdded] = useState(true);
     const addToFirebase = () => {
         dbRef.push({
             poster: `https://image.tmdb.org/t/p/original${addItem.poster_path}`,
-            id: addItem.id
+            id: addItem.id,
+            name: addItem.name
         })
         setAdded(false)
 

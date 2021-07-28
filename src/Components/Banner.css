@@ -1,0 +1,85 @@
+.banner___contents {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: absolute;
+        max-width: 100%;
+    width: 100vw;
+    height: 72vh;
+    max-height: 100%;
+
+}
+
+.bannerPoster{
+    max-width: 100%;
+    width: 100vw;
+    height: 100vh;
+    max-height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode:soft-light;
+    background-color: rgba(0, 0, 0, 0.589);
+    background: rgba(0, 0,0,0.7);
+    background-image: linear-gradient(to top, rgba(0,0,0,0.8) 0, rgba(0,0,0,0) 60%, rgba(0,0,0,0.8) 100%);
+    background-size: 110%;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: shrinkFade 4s ease-in-out;
+    background-position-y: 10%;
+    box-shadow: inset 0 0 555px 105px black;
+
+
+}
+
+.top {
+box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;			
+}
+
+@keyframes shrinkFade {
+    0% {
+        background-size: 100%;
+        background-position-y: 0%;
+    }
+
+    100% {
+        background-size: 110%;
+        background-position-y: 10%;
+    }
+}
+/* 537895 */
+/* .bannerFade {
+        height: 3.4rem;
+background-color: #537895;
+background-image: linear-gradient(180deg, #09203f 0%, #0c1a25 74%);
+    position:relative;
+    margin:0 auto;
+    top: 0px;
+
+} */
+
+
+.bannerInfo {
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    position: relative;
+    top: 400px;
+    left: 300px;
+    align-items: center;
+    justify-content: left;
+    height: 100px;
+}
+
+.bannerInfo h2 {
+    color: white;
+        letter-spacing:1px;
+    font-size: 6rem;
+    text-align: center;
+}
+
+.bannerInfo h3 {
+    color: white;
+    letter-spacing: 1px;
+    font-size: 25px;
+    font-weight: normal;
+}

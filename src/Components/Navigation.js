@@ -8,15 +8,23 @@ function Navigation() {
         <div className="navigation">
             <ul>
                 <li>
-                    <Link to="/watchlist" className="watchListLink">
-                    <button className="watchListButton"><h2>watchlist</h2></button>
-                    </Link>
+                    
+                    <button className="watchListButton">
+                        <Link to="/watchlist" className="watchListLink">
+                            <h2>watchlist</h2>
+                        </Link>
+                    </button>
+
                 </li>
 
                 <li>
+                   
+                    <button className="searchButton"> 
                     <Link to="/search">
-                    <button className="searchButton"><h2>search</h2></button>
+                        <h2>search</h2>                    
                     </Link>
+                    </button>
+
                  </li>
             </ul>
         </div>

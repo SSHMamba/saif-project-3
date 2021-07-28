@@ -10,7 +10,8 @@ const [added, setAdded] = useState(true);
     const addToFirebase = () => {
         dbRef.push({
             poster: `https://image.tmdb.org/t/p/original${addItem.poster_path}`,
-            id: addItem.id
+            id: addItem.id,
+            title: addItem.title
         })
         setAdded(false)
 

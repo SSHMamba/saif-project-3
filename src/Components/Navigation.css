@@ -22,3 +22,7 @@
     color: rgb(209, 64, 64);
 
 }
+
+.watchListButton, .searchButton {
+  cursor: auto;
+}
