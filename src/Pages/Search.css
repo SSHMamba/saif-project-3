@@ -26,13 +26,13 @@
     position: relative;
 }
 
-ul li {
+.searchCategories li {
 
      z-index: 1000;
     position: relative;
 }
 
-ul li p {
+.searchCategories li p {
     font-size: 35px;
     letter-spacing: 1.5px;
 }
