@@ -13,7 +13,6 @@ const images = "https://image.tmdb.org/t/p/w500/";
 const Search = (media, setMedia) => {
 const [search, setSearch] = useState("");
 const [content, setContent] = useState([]);
-
 const [type, setType] = useState("movie");
 const [isTV, setIsSelectedTV] = useState(null);
 const [isMovie, setIsSelectedMovie] = useState(null);

@@ -5,7 +5,7 @@ import "../Pages/MovieDetails.css"
 
 const BannerTV = (content) => {
 const [banner, setBanner] = useState([]);
-const url = 'https://api.themoviedb.org/3/tv/popular?api_key=d62e1adb9803081c0be5a74ca826bdbd'
+const url = 'https://api.themoviedb.org/3/trending/tv/day?api_key=d62e1adb9803081c0be5a74ca826bdbd'
 const backdropImages = "https://image.tmdb.org/t/p/original"
 
 

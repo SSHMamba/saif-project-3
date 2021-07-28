@@ -237,4 +237,17 @@ button p:hover {
 .similarWrapper .runtime {
     color: white;
     font-family: 'Roboto', serif;
+
+}
+
+.similarTitle h2 {
+    color: white;
+    text-align: left;
+    position: relative;
+    left: 275px;
+    padding-bottom: 15px;
+}
+
+.similarTitle {
+        width: 750px;
 }

@@ -99,7 +99,7 @@ const MovieDetails = (props) => {
         </div>
         <p className="summary">{movie.overview}</p>
 
-        <p className="voteStyle">Rating: {movie.vote_average}</p>
+        <p className="voteStyle">Rating: {movie.vote_average < 1 ? "n/a" : movie.vote_average}</p>
         
         <div className="mediaContainer">
         <ul className="mediaLinks">
@@ -117,6 +117,10 @@ const MovieDetails = (props) => {
       </div>
     </div>
     <div className="bannerFadeBottom"/>
+    <div className="similarTitle">
+      {similar.length > 0 ? <h2>If you enjoyed {movie.title || movie.name}, you may like...</h2> : null }
+      
+    </div>
     <div className="similarWrapper">
           {similar.length > 0 ? similar.slice(0, 6).map((movie) => {
         return (

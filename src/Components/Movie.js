@@ -33,11 +33,40 @@ useEffect(() => {
               <form onClick={event => {setMediaType('movie')
               event.preventDefault();
               }}>
-              <button onClick={event => {setUrl(`https://api.themoviedb.org/3/movie/popular?api_key=d62e1adb9803081c0be5a74ca826bdbd&`)
+              <button onClick={event => {setUrl(`https://api.themoviedb.org/3/trending/movie/day?api_key=d62e1adb9803081c0be5a74ca826bdbd&`)
                       event.preventDefault();
               }}><p>Trending Movies</p></button>
               </form>
         </li>
+        <li>
+            
+              <form onClick={event => {setMediaType('movie')
+                event.preventDefault();
+                }}>
+
+              <button onClick={event => {setUrl(`https://api.themoviedb.org/3/movie/popular?api_key=d62e1adb9803081c0be5a74ca826bdbd`)
+                  event.preventDefault();
+              }}
+                
+                ><p>Popular Movies</p></button>
+
+              </form>
+      </li>
+      <li>
+            
+              <form onClick={event => {setMediaType('tv')
+                event.preventDefault();
+                }}>
+
+              <button onClick={event => {setUrl(`https://api.themoviedb.org/3/trending/tv/day?api_key=d62e1adb9803081c0be5a74ca826bdbd`)
+                  event.preventDefault();
+              }}
+                
+                ><p>Trending Shows</p></button>
+
+              </form>
+      </li>
+    
           <li>
             
               <form onClick={event => {setMediaType('tv')
@@ -48,11 +77,11 @@ useEffect(() => {
                   event.preventDefault();
               }}
                 
-                ><p>What's Popular on TV</p></button>
+                ><p>Popular Shows</p></button>
 
               </form>
       </li>
-    
+
 
       </ul>
 

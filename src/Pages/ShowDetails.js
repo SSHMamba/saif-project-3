@@ -98,7 +98,7 @@ const ShowDetails = (props) => {
         </div>
         <p className="summary">{show.overview}</p>
 
-        <p className="voteStyle">Rating: {show.vote_average}</p>
+        <p className="voteStyle">Rating: {show.vote_average < 1 ? "n/a" : show.vote_average}</p>
         
         <div className="mediaContainer">
         <ul className="mediaLinks">
@@ -115,6 +115,9 @@ const ShowDetails = (props) => {
       </div>
     </div>
         <div className="bannerFadeBottom"/>
+        <div className="similarTitle">
+           {similar.length > 0 ? <h2>If you enjoyed {show.title || show.name}, you may like...</h2> : null }
+        </div>
         <div className="similarWrapper">
           {similar.length > 0 ? similar.slice(0,6).map((show) => {
         return (

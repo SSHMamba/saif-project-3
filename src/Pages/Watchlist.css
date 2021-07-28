@@ -28,6 +28,12 @@
   width: 100%;
   margin: 0 auto;
   padding-bottom: 45px;
+  padding-top: 45px;
+  
+    background-blend-mode:soft-light;
+    background-color: rgba(42, 49, 77, 0.589);
+    background: rgba(26, 68, 102, 0.7);
+    background-image: linear-gradient(to top, rgba(0,0,0,0.8) 0, rgba(0,0,0,0) 60%, rgba(0,0,0,0.8) 100%);
 }
 
 .listWrapper li {
@@ -61,10 +67,27 @@
    opacity: 0;
    }
    100% {
-   transform: translateY(0);
+   transform: translateY(0%);
    opacity: 1;
    }
 }
+
+.listWrapper .slideUp {
+        animation: slideInFromLeft 1.5s ease-in-out;
+
+}
+
+@keyframes slideInFromLeft {
+   0% {
+   transform: translateX(-50%);
+   opacity: 0;
+   }
+   100% {
+   transform: translateX(0%);
+   opacity: 1;
+   }
+}
+
 
 .removeButton {
     position: relative;

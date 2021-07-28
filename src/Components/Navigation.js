@@ -11,7 +11,7 @@ function Navigation() {
                     
                     <button className="watchListButton">
                         <Link to="/watchlist" className="watchListLink">
-                            <h2>watchlist</h2>
+                            <h2>Watchlist</h2>
                         </Link>
                     </button>
 
@@ -21,7 +21,7 @@ function Navigation() {
                    
                     <button className="searchButton"> 
                     <Link to="/search">
-                        <h2>search</h2>                    
+                        <h2>Search</h2>                    
                     </Link>
                     </button>
 
