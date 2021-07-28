@@ -7,7 +7,7 @@ import Navigation from "../Components/Navigation";
 import PreviousPage from "../Components/PreviousPage";
 import { Link } from "react-router-dom";
 
-const images = "https://image.tmdb.org/t/p/w500";
+const images = "https://image.tmdb.org/t/p/original";
 const backdropImages = "https://image.tmdb.org/t/p/original"
 
 

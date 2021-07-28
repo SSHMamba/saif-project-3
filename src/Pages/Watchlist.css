@@ -92,8 +92,9 @@
 .removeButton {
     position: relative;
     display: inline-block;
-    bottom: 400px;
-    right: 80px;
+    /* bottom: 400px; */
+    right:50px;
+    bottom: 10px;
     color: white;
 }
 
@@ -101,4 +102,25 @@
     border: 1px solid black;
     background: black;
     border-radius: 25px;
+}
+
+@media (max-width: 1920px) {
+.watchListTitle {
+    color: white;
+    padding: 25px;
+    font-size: 25px;
+    display: flex;
+    margin-left: 400px;
+    padding-top: 45px;
+}
+
+    .watchListCategories {
+    padding: 50px;
+    color: white;
+    font-size: 25px;
+}
+
+.removeButton span {
+    font-size: 20px;
+}
 }

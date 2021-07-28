@@ -16,6 +16,7 @@ useEffect(() => {
       .then((res) => res.json())
       .then((data)=> {
         onMovies(data.results)
+        console.log(data.results)
         // console.log(data.results)
       })
   });
