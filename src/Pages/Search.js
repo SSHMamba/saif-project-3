@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import axios from 'axios';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Navigation from "../Components/Navigation";
@@ -6,8 +7,8 @@ import './Search.css'
 import Banner from '../Components/Banner';
 import BannerTV from '../Components/BannerTV';
 
-// search API used to search through database
-const images = "https://image.tmdb.org/t/p/w500/";
+
+const images = "https://image.tmdb.org/t/p/original/";
 
 
 const Search = (media, setMedia) => {
@@ -16,21 +17,19 @@ const [content, setContent] = useState([]);
 const [type, setType] = useState("movie");
 const [isTV, setIsSelectedTV] = useState(null);
 const [isMovie, setIsSelectedMovie] = useState(null);
-const searchUrl = `https://api.themoviedb.org/3/search/${type}?api_key=d62e1adb9803081c0be5a74ca826bdbd&query=`
+const searchUrl = `https://api.themoviedb.org/3/search/${type}?api_key=d62e1adb9803081c0be5a74ca826bdbd&query=${search}`
 
  // Search form that fetches search API and returns results
-  const submitForm = (e) => {
-    e.preventDefault();
-  
-  // API used to search for any movie in the database
-  
-    fetch(searchUrl + search)
-      .then(res => res.json())
-      .then(data => {
-        setContent(data.results);
+const submitForm = async (e) => {
+  e.preventDefault();
+  try {
+    const {data} = await axios.get(searchUrl);
+      setContent(data.results);
+      setSearch("");
+  } catch (error) {
+    console.log(error);
 
-      })
-    setSearch("")
+  }
 
 }
   
@@ -38,17 +37,6 @@ const searchUrl = `https://api.themoviedb.org/3/search/${type}?api_key=d62e1adb9
   const searchQuery = (e) => {
     setSearch(e.target.value)
   }
-  // console.log(searchUrl)
-  // console.log(type)
-  // console.log(isTV)
-
-
-
-
-
-
-
-
 
 
     return (
@@ -63,7 +51,7 @@ const searchUrl = `https://api.themoviedb.org/3/search/${type}?api_key=d62e1adb9
           <input
             className="search"
             type="search"
-            placeholder="Search for a movie or show.."
+            placeholder={ isTV ? "Search for a TV Show..." : "Search for a Movie..."}
             value={search}
             onChange={searchQuery}
             />
@@ -110,7 +98,8 @@ const searchUrl = `https://api.themoviedb.org/3/search/${type}?api_key=d62e1adb9
                   
     <section className="movieslist">
       
-      {content.length > 0 ? content.map((media) => {
+      {content.length > 0 ?content.map((media) => {
+        
         return (
         
         <Link to={`${type}/${media.id}`}>
@@ -129,6 +118,8 @@ const searchUrl = `https://api.themoviedb.org/3/search/${type}?api_key=d62e1adb9
           
         );
       }): null}
+
+  
       
 
         </section>

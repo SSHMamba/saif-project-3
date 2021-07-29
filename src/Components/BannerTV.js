@@ -14,8 +14,6 @@ useEffect(()=> {
       .then((res) => res.json())
       .then((data)=> {
         setBanner(data.results[Math.floor(Math.random() * data.results.length - 1)])
-        console.log(data.results[Math.floor(Math.random() * data.results.length - 1)])
-        // console.log(data.results)
       })
 
 }, [setBanner])

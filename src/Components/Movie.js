@@ -107,7 +107,7 @@ useEffect(() => {
         </Link>
           
         );
-      }): null}
+      }): <p class="noResults">No results found. Please try again?</p>}
 
         </section>
       </section>

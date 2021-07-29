@@ -105,22 +105,24 @@
 }
 
 @media (max-width: 1920px) {
-.watchListTitle {
-    color: white;
-    padding: 25px;
-    font-size: 25px;
-    display: flex;
-    margin-left: 400px;
-    padding-top: 45px;
+
+    .watchListTitle {
+        color: white;
+        padding: 25px;
+        font-size: 25px;
+        display: flex;
+        margin-left: 400px;
+        padding-top: 45px;
 }
 
     .watchListCategories {
-    padding: 50px;
-    color: white;
-    font-size: 25px;
+        padding: 50px;
+        color: white;
+        font-size: 25px;
 }
 
-.removeButton span {
-    font-size: 20px;
+    .removeButton span {
+        font-size: 20px;
 }
+
 }
