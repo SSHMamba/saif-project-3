@@ -95,7 +95,7 @@ const MovieDetails = (props) => {
         <h3 className="tagline">{movie.tagline}</h3>
         <div className="date-runtime">
         <p className="release">Release Date: {movie.release_date}</p>
-        <p className="runtime">{movie.runtime} minutes</p>
+        <p className="runtime">{movie.runtime > 0 ? movie.runtime + " minutes" : "n/a minutes"}</p>
         </div>
         <p className="summary">{movie.overview}</p>
 

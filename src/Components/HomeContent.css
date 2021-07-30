@@ -35,3 +35,11 @@
    opacity: 1;
    }
 }
+
+.pageButtons {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 40px;
+}

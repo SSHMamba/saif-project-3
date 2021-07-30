@@ -17,21 +17,24 @@ const [content, setContent] = useState([]);
 const [type, setType] = useState("movie");
 const [isTV, setIsSelectedTV] = useState(null);
 const [isMovie, setIsSelectedMovie] = useState(null);
-const searchUrl = `https://api.themoviedb.org/3/search/${type}?api_key=d62e1adb9803081c0be5a74ca826bdbd&query=${search}`
+const [pageNumber, setPageNumber] = useState(1);
 
- // Search form that fetches search API and returns results
-const submitForm = async (e) => {
-  e.preventDefault();
-  try {
-    const {data} = await axios.get(searchUrl);
-      setContent(data.results);
-      setSearch("");
-  } catch (error) {
-    console.log(error);
+const searchUrl = `https://api.themoviedb.org/3/search/${type}?api_key=d62e1adb9803081c0be5a74ca826bdbd&query=${search}&page=${pageNumber}`
 
-  }
-
+const submitForm = (e) => {
+e.preventDefault();
+  axios({
+    url: searchUrl,
+    params: {
+      page: pageNumber,
+    }
+  }).then((setQuery) => {
+    setContent(setQuery.data.results);
+    setSearch("");
+  })
 }
+
+
   
   // user search input
   const searchQuery = (e) => {
@@ -61,8 +64,6 @@ const submitForm = async (e) => {
 
     <div>
 
-        
-        {/* <p className="selectCategory">Select a category</p> */}
 
         <ul className="searchCategories">
           <li>
@@ -123,6 +124,23 @@ const submitForm = async (e) => {
       
 
         </section>
+        <div className="pageButtons">
+
+          {pageNumber > 1 ?   <button onClick={event => {setPageNumber(pageNumber - 1)
+          event.preventDefault()}}
+          >
+          <p>Prev Page</p>
+          </button> : null }
+
+
+          {content.length > 0 ?   <button onClick={event => {setPageNumber(pageNumber + 1)
+          event.preventDefault()}}
+          >
+          <p>Next Page</p>
+          </button> : null }
+
+
+        </div>
     
         </div>
     )

@@ -1,33 +1,32 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from "react";
-import './Movie.css'
+import axios from 'axios';
+import './HomeContent.css'
 
 
 const images = "https://image.tmdb.org/t/p/w500/";
 
 const Movie = ( { movies, onMovies }) => {
-const [url, setUrl] = useState(`https://api.themoviedb.org/3/movie/popular?api_key=d62e1adb9803081c0be5a74ca826bdbd`)
+const [pageNumber, setPageNumber] = useState(1);
+const [url, setUrl] = useState(`https://api.themoviedb.org/3/movie/popular?api_key=d62e1adb9803081c0be5a74ca826bdbd&page=${pageNumber}`)
 
 let [mediaType, setMediaType] = useState('movie')
 
 
 useEffect(() => {
-    fetch(url)
-      .then((res) => res.json())
-      .then((data)=> {
-        onMovies(data.results)
-        console.log(data.results)
-        // console.log(data.results)
-      })
-  });
+  axios({
+    url: url,
+    params: {
+      page: pageNumber,
+    }
+  }).then((setMovie) => {
+    onMovies(setMovie.data.results);
+  })
+})
 
-
-
-
-// console.log(mediaType)
     return (
     <section className="homePage">
-
+{/* Select categories on homepage for trending, popular shows or movies */}
     <div className="categories">
       <ul>
         <li>
@@ -82,11 +81,11 @@ useEffect(() => {
 
               </form>
       </li>
-
-
       </ul>
-
       </div>
+
+
+{/* Display list of shows or movies */}
     <section className="movieslist" >
 
       {movies.length > 0 ? movies.map((movie) => {
@@ -107,9 +106,27 @@ useEffect(() => {
         </Link>
           
         );
-      }): <p class="noResults">No results found. Please try again?</p>}
+      }): null}
 
         </section>
+
+{/* page buttons */}
+          <div className="pageButtons">
+
+          {pageNumber > 1 ?   <button onClick={event => {setPageNumber(pageNumber - 1)
+          event.preventDefault()}}
+          >
+          <p>Prev Page</p>
+          </button> : null }
+
+          <button onClick={event => {setPageNumber(pageNumber + 1)
+          event.preventDefault()}}
+          >
+          <p>Next Page</p>
+          </button>
+
+
+        </div>
       </section>
 
     )

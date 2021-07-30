@@ -92,7 +92,7 @@ const ShowDetails = (props) => {
         <h3 className="tagline">{show.tagline}</h3>
         <div className="date-runtime">
         <p className="release">First aired: {show.first_air_date}</p>
-        <p className="seasons">{show.number_of_seasons} seasons</p>
+        <p className="seasons">{show.number_of_seasons < 2 ? "1 season" : show.number_of_seasons + " seasons" }</p>
         <p className="runtime">{show.episode_run_time} minutes</p>
 
         </div>

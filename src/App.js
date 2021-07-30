@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Home from './Components/Home';
+import Home from './Pages/Home';
 import Header from './Components/Header';
 import MovieDetails from './Pages/MovieDetails';
 import ShowDetails from './Pages/ShowDetails';
@@ -43,5 +43,4 @@ function App() {
 export default App;
 
 
-// watchlist shows link to showdetails
-// search function for tv shows
+// next & previous page buttons on search page still not functional

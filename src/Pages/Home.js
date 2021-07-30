@@ -1,6 +1,6 @@
-import Movie from "./Movie";
-import Description from "./Description";
-import Navigation from "./Navigation";
+import HomeContent from "../Components/HomeContent";
+import Description from "../Components/Description";
+import Navigation from "../Components/Navigation";
 import './Home.css'
 import { useState } from "react";
 
@@ -14,7 +14,7 @@ return (
 
         <Navigation />
         <Description />
-        <Movie movies={movies} onMovies={setMovies}/>
+        <HomeContent movies={movies} onMovies={setMovies}/>
         
 
 
