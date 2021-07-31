@@ -38,3 +38,18 @@
 .genrePoster::-webkit-scrollbar {
     display: none;
 }
+
+.slideInRight {
+    animation: slideRight 1.5s ease-in-out;
+}
+
+@keyframes slideRight {
+   0% {
+   transform: translateX(-100%);
+   opacity: 0;
+   }
+   100% {
+   transform: translateY(0);
+   opacity: 1;
+   }
+}

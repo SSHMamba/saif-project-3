@@ -27,7 +27,7 @@ function App() {
     <Route exact path ="/tv/:showID" component={ShowDetails}/>
     <Route exact path="/watchlist" component={WatchList}/>
     <Route exact path="/discover" component={DiscoverPage}/>
-    <Route exact path="/search/" component={Search}></Route>
+    <Route exact path="/search/" component={Search}/>
 
 
     </main>

@@ -33,11 +33,11 @@ function Genres ({title, fetchUrl, type, rowLarge = false}) {
         <Link to={`${type}/${movie.id}`}>
             {rowLarge ?
             <img
-            className="eachPosterLarge moviePoster"
+            className="eachPosterLarge moviePoster slideInRight"
             src={movie.poster_path ? `${images}${movie.poster_path}` || `${images}${movie.poster_path}` : "https://www.movienewz.com/img/films/poster-holder.jpg"} alt={movie.title} /> 
             :  
             <img
-            className="eachPoster moviePoster"
+            className="eachPoster moviePoster slideInRight"
             src={movie.backdrop_path ? `${images}${movie.backdrop_path}` || `${images}${movie.poster_path}` : "https://www.movienewz.com/img/films/poster-holder.jpg"} alt={movie.title} />}
 
              {/* <div className="movieInfo" >
