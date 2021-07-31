@@ -4,6 +4,7 @@ import Home from './Pages/Home';
 import Header from './Components/Header';
 import MovieDetails from './Pages/MovieDetails';
 import ShowDetails from './Pages/ShowDetails';
+import DiscoverPage from './Pages/DiscoverPage';
 import Search from './Pages/Search';
 import WatchList from './Pages/Watchlist';
 import React from 'react';
@@ -25,6 +26,7 @@ function App() {
     <Route exact path ="/movie/:movieID" component={MovieDetails}/>
     <Route exact path ="/tv/:showID" component={ShowDetails}/>
     <Route exact path="/watchlist" component={WatchList}/>
+    <Route exact path="/discover" component={DiscoverPage}/>
     <Route exact path="/search/" component={Search}></Route>
 
 

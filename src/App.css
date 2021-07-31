@@ -84,7 +84,7 @@ i {
 }
 
 input[type=search] {
-  width: 150px;
+  width: 140px;
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
 }

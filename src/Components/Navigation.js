@@ -16,6 +16,13 @@ function Navigation() {
                     </button>
 
                 </li>
+                <li>
+                    <button className="discoverButton">
+                        <Link to="/discover" className="discoverLink">
+                            <h2>Discover</h2>
+                        </Link>
+                    </button>
+                </li>
 
                 <li>
                    
