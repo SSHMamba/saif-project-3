@@ -24,8 +24,6 @@ function Genres ({title, fetchUrl, type, rowLarge = false}) {
         <div className="row">
             {title}
 
-
-
         <div className="genrePoster">
         {movies.length > 0 ? movies.slice(0, 20).map((movie) => {
         return (

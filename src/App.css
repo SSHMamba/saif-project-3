@@ -31,7 +31,11 @@ h1,a {
   text-decoration: none;
   transition: 0.7s;
 font-family: 'Monoton', cursive;
-font-size: 65px;
+
+}
+
+h1 {
+  font-size: 65px;
 }
 
 h1,a:hover {
@@ -378,7 +382,7 @@ li i:hover {
   
   }
 
-  h1, a {
+  h1{
     font-size: 45px;
   }
 
@@ -429,11 +433,8 @@ li i:hover {
 
 
 @media (max-width: 420px) {
-h1 {
-  font-size: 3rem;
-}
 
-  h1, a {
+  h1 {
     font-size: 45px;
   }
 
