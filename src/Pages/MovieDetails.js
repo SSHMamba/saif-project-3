@@ -3,6 +3,7 @@ import axios from "axios";
 import './MovieDetails.css'
 import '../App.css'
 import AddToList from "../Components/AddToList";
+import AddMovieMobile from "../Components/AddMovieMobile";
 import Navigation from "../Components/Navigation";
 import PreviousPage from "../Components/PreviousPage";
 import { Link } from "react-router-dom";
@@ -89,6 +90,7 @@ const MovieDetails = (props) => {
           src={movie.poster_path ? `${images}${movie.poster_path}` : "https://www.movienewz.com/img/films/poster-holder.jpg"}
           alt={`Poster for ${movie.original_title}`}
         />
+        <button onClick={reloadPage}><AddMovieMobile addItem={movie} className="addButtonMobile"/></button>
       </div>
       <div className="detailsDescription" >
         <h2 className="detailTitle">{movie.title}</h2>

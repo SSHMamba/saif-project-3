@@ -5,6 +5,7 @@ import AddToListTV from "../Components/AddToListTV";
 import Navigation from "../Components/Navigation";
 import PreviousPage from "../Components/PreviousPage";
 import { Link } from "react-router-dom";
+import AddTVMobile from "../Components/AddTVMobile";
 
 const images = "https://image.tmdb.org/t/p/w500";
 const backdropImages = "https://image.tmdb.org/t/p/original"
@@ -86,6 +87,7 @@ const ShowDetails = (props) => {
           src={show.poster_path ? `${images}${show.poster_path}` : "https://www.movienewz.com/img/films/poster-holder.jpg"}
           alt={`Poster for ${show.original_title}`}
         />
+          <button onClick={reloadPage}><AddTVMobile addItem={show} className="addButtonMobile"/></button>
       </div>
       <div className="detailsDescription" >
         <h2 className="detailTitle">{show.name}</h2>

@@ -9,6 +9,11 @@
         text-align: center;
 }
 
+.AddButtonMobile {
+    display: none;
+    padding: 0px;
+}
+
 .AddButton p:hover {
         color: black;
         background:rgba(70, 246, 143, 0.746)
@@ -43,6 +48,11 @@
 
 .AddButton {
     animation: scroll-fade 2s ease-in-out;
+    padding: 20px;
+}
+
+.AddedButton {
+    padding: 20px;
 }
 
 @keyframes scroll-fade {
@@ -83,9 +93,47 @@
 
 @media (max-width: 420px) {
     .AddButton, .AddedButton {
-        position: relative;
-        right: 0px;
-        left: 90px;
-        bottom: 525px;
+        display: none;
     }
+
+    .AddButtonMobile, .AddedButtonMobile {
+     position: absolute;
+       display: inline-block;
+       right: 55px;
+       bottom: 20px;
+    }
+
+    .AddButtonMobile p {
+        border: 6.5px solid rgb(17, 67, 107);
+    background:rgb(21, 100, 165);
+    padding: 15px;
+    border-radius: 25px;
+    font-size: 7px;
+    /* background-color: rgb(121, 64, 148); */
+    transition: 0.5s ease-in-out;
+        text-align: center;
+
+}
+.AddButtonMobile p:hover {
+        color: black;
+        background:rgba(70, 246, 143, 0.746)
+}
+
+.AddedButtonMobile p {
+    border: 6.5px solid rgb(17, 67, 107);
+    background:rgb(70, 246, 143, 0.746);
+    padding: 15px;
+    border-radius: 25px;
+    font-size: 7px;
+    color: black;
+    /* background-color: rgb(121, 64, 148); */
+    transition: 0.5s ease-in-out;
+        text-align: center;
+}
+
+.AddedButtonMobile p:hover {
+        color: black;
+        background:rgba(70, 246, 143, 0.746)
+}
+
 }

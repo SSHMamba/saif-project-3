@@ -11,6 +11,10 @@
     display: flex;
 }
 
+.categories button {
+    padding: 20px;
+}
+
 .categories li p {
     border: 2px solid rgb(255, 255, 255);
     padding: 15px;
@@ -42,6 +46,10 @@
     justify-content: center;
     position: relative;
     bottom: 40px;
+}
+
+.pageButtons button {
+    padding: 20px;
 }
 
 @media (max-width: 420px) {
