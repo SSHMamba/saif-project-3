@@ -31,6 +31,7 @@ h1,a {
   text-decoration: none;
   transition: 0.7s;
 font-family: 'Monoton', cursive;
+font-size: 65px;
 }
 
 h1,a:hover {
@@ -373,6 +374,15 @@ li i:hover {
 @media (max-width: 1280px) {
   header {
   padding-top: 40px;
+  
+  }
+
+  h1, a {
+    font-size: 45px;
+  }
+
+  header {
+    padding-bottom: 20px;
   }
   .movieInfo {
     width: 200px;
@@ -421,6 +431,14 @@ li i:hover {
 h1 {
   font-size: 3rem;
 }
+
+  h1, a {
+    font-size: 45px;
+  }
+
+  header {
+    padding-bottom: 20px;
+  }
 
 .description {
   height: 120px;

@@ -55,8 +55,8 @@
 @media (max-width: 420px) {
      .categories ul li p{
    font-size: 10px;
-   padding: 5px;
-   margin: -40px;
+   padding: 7px;
+   margin: -35px;
    justify-content: center;
    display: flex;
    left: 0px;
@@ -78,6 +78,10 @@
      left: 0px;
      padding: 0px;
 
+ }
+
+ .categories li p {
+    border: 1px solid white;
  }
 
 }
