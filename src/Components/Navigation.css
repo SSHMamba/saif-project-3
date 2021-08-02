@@ -3,11 +3,19 @@
   display: flex;
   justify-content: center;
   background: rgb(10, 19, 36);
+  margin: 0 auto;
 }
 
 .navigation ul {
   list-style: none;
   display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding-left: 0px;
+}
+
+.navigation ul li {
+  /* width: auto; */
 }
 
 
@@ -23,8 +31,37 @@
 
 }
 
+.navigation a {
+  max-width: 100%;
+  width: 100%;
+}
+
+.navigation button {
+  max-width: 100%;
+  width: 100%;
+}
+
 .watchListButton, .searchButton {
   cursor: auto;
+}
+
+@media (max-width: 768px) {
+  .navigation button {
+    padding: 0px;
+    padding-top: 30px;
+
+  }
+
+  .navigation ul {
+        margin-left: 0px;
+        padding-left: 0px;
+        margin: 0 auto;
+  }
+
+  .navigation ul li a {
+    width: 100%;
+    display: inline-block;
+  }
 }
 
 @media (max-width: 420px) {
@@ -34,7 +71,6 @@
 
   .navigation ul li {
     padding: 5px;
-    width: 50px;
     justify-content: center;
     display: flex;
     margin: 5px;

@@ -4,7 +4,7 @@ function Footer() {
 
         <div className="socials">
 
-        <span className="contact">contact me</span>
+        <span className="contact">Contact Me</span>
         <ul>
         <li>Saif Hussaini</li>
         <li><a href="https://github.com/SSHMamba"><span className="sr-only" htmlFor="sociallinks">Github</span><i class="fab fa-github"></i></a></li>   

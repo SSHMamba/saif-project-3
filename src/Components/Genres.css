@@ -106,3 +106,29 @@
     width: 225px;
     }
 }
+
+@media (max-width: 420px) {
+    .row {
+        margin-top: -40px;
+        text-align: center;
+    }
+
+    .eachPosterLarge {
+        max-height: 250px;
+        height: 250px;
+        max-width: 150px;
+        width: 150px;
+    
+    }
+
+    .eachPosterLarge, .eachPoster {
+        position: relative;
+        right: 20px;
+    }
+
+    .eachPoster {
+        margin: 5px;
+        max-height: 100px;
+        width: 165px;
+    }
+}

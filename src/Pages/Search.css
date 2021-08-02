@@ -26,6 +26,7 @@
     position: relative;
 }
 
+
 .searchCategories li {
 
      z-index: 1000;
@@ -72,5 +73,16 @@ form {
     width: 170px;
     height: 250px;
   }
+
+}
+
+@media (max-width: 420px) {
+    .searchCategories li p{
+        font-size: 15px;
+    }
+form i {
+    font-size: 15px;
+}
+
 
 }

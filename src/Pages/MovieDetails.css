@@ -394,6 +394,10 @@ background-image: linear-gradient(360deg, #030608 2%, rgb(10, 19, 36) 100%);
 @media (max-width: 768px) {
 .detailsDescription {
     padding-left: 0px;
+    line-height: 15px;
+    position: relative;
+    top: 25px;
+    padding-top: 20px;
 }
 
 .movieDetails {
@@ -413,8 +417,8 @@ background-image: linear-gradient(360deg, #030608 2%, rgb(10, 19, 36) 100%);
         padding: 70px;
     }
     .poster-image img {
-    height: 370px;
-    width: 250px;
+    height: 390px;
+    width: 270px;
 }
 
 .goBack {
@@ -455,7 +459,13 @@ background-image: linear-gradient(360deg, #030608 2%, rgb(10, 19, 36) 100%);
 }
 
 .date-runtime {
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.runtime {
+    margin-left: 0px;
 }
 
 }
@@ -484,6 +494,13 @@ background-image: linear-gradient(360deg, #030608 2%, rgb(10, 19, 36) 100%);
 
 .detailsDescription {
     max-width: 100%;
+        padding-left: 0px;
+        padding: 0px;
+    line-height: 15px;
+    position: relative;
+    top: 25px;
+    padding-top: 20px;
+    padding-bottom: 45px;
 }
 
 .poster-image {
@@ -501,13 +518,17 @@ background-image: linear-gradient(360deg, #030608 2%, rgb(10, 19, 36) 100%);
 
 .goBack {
     bottom: 0px;
+    top: 45px;
     max-width: 100%;
-    width: 150px;
+    width: 100px;
 }
 
 .goBack p {
     padding: 10px;
 }
+
+
+
 
 .similarTitle {
     max-width: 100%;
@@ -517,6 +538,16 @@ background-image: linear-gradient(360deg, #030608 2%, rgb(10, 19, 36) 100%);
     padding-left: 0px;
     margin: 0 auto;
     line-height: 25px;
+    }
+
+    .date-runtime {
+        display: flex;
+        flex-direction: row;
+        margin-top: 0px;
+    }
+
+    .date-runtime p {
+        margin: 20px;
     }
 
 }

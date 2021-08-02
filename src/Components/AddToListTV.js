@@ -26,7 +26,7 @@ const [added, setAdded] = useState(true);
         { added ? <button className="AddButton" 
                 onClick={addToFirebase}> 
                 
-        <p>+ Add to Watchlist </p>
+        <p>+ Watchlist </p>
         
         </button> : <button className="AddedButton" 
                 > 
