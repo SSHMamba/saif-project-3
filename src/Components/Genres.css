@@ -53,3 +53,56 @@
    opacity: 1;
    }
 }
+
+@media (max-width: 1920px) {
+    .eachPosterLarge {
+        max-height: 400px;
+        max-width: 250px;
+        height: 400px;
+        width: 250px;
+    }
+
+    .eachPoster {
+    max-height: 200px;
+    max-width: 350px;
+    width: 325px;
+    }
+
+    .row {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .eachPosterLarge {
+        max-height: 350px;
+        max-width: 230px;
+        height: 350px;
+        width: 230px;
+    }
+
+        .eachPoster {
+    max-height: 160px;
+    max-width: 320px;
+    width: 265px;
+    }
+}
+
+@media (max-width: 768px) {
+    .row {
+        margin-left: 0px;
+        font-size: 20px;
+    }
+    .eachPosterLarge {
+        max-height: 300px;
+        max-width: 210px;
+        height: 300px;
+        width: 210px;
+    }
+
+    .eachPoster {
+    max-height: 140px;
+    max-width: 320px;
+    width: 225px;
+    }
+}

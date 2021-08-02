@@ -126,3 +126,53 @@
 }
 
 }
+
+@media (max-width:  768px) {
+    .watchListTitle {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .listWrapper li {
+    padding: 0px 0px;
+}
+
+.listWrapper {
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.info {
+    margin: -5px;
+}
+
+}
+
+@media (max-width: 420px) {
+
+    .listWrapper {
+        left: 0px;
+        margin: 0 auto;
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .listWrapper .slideUp {
+        width: 120px;
+    }
+    .listWrapper li img {
+        width: 100px;
+        height: 150px;
+}
+
+.removeButton {
+    right: -50px;
+    bottom: 40px;
+    
+}
+
+
+}

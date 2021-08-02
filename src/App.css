@@ -367,8 +367,22 @@ li i:hover {
 
 
 @media (max-width: 1280px) {
+  header {
+  padding-top: 40px;
+  }
   .movieInfo {
     width: 200px;
+  }
+
+    .title {
+    font-size: 1rem;
+      position: relative;
+      right: 12px;
+  }
+
+
+  .navigation ul li {
+    padding: 10px;
   }
 
   h2 {
@@ -388,6 +402,14 @@ li i:hover {
   }
 }
 
+@media (max-width: 768px) {
+  input[type=search]:focus {
+  width: 45%;
+  border-bottom: 2px solid rgb(209, 64, 64);
+  outline: 0;
+}
+}
+
 
 
 
@@ -400,6 +422,10 @@ h1 {
   height: 120px;
   font-size: 1.2rem;
   padding: 25px;
+ }
+
+ .categories ul li {
+   font-size: 10px;
  }
 
 input[type=search]:focus {

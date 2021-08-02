@@ -26,3 +26,17 @@
 .watchListButton, .searchButton {
   cursor: auto;
 }
+
+@media (max-width: 420px) {
+  .navigation {
+    max-width: 100%;
+  }
+
+  .navigation ul li {
+    padding: 5px;
+    width: 50px;
+    justify-content: center;
+    display: flex;
+    margin: 5px;
+  }
+}

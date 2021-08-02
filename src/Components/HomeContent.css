@@ -43,3 +43,33 @@
     position: relative;
     bottom: 40px;
 }
+
+@media (max-width: 420px) {
+     .categories ul li p{
+   font-size: 10px;
+   padding: 5px;
+   margin: -40px;
+   justify-content: center;
+   display: flex;
+   left: 0px;
+   right: 0px;
+
+ }
+
+ .categories  {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: auto;
+    padding-bottom: 20px;
+ }
+
+ .categories ul {
+     max-width: 100%;
+     margin: 0 auto;
+     left: 0px;
+     padding: 0px;
+
+ }
+
+}

@@ -83,3 +83,23 @@ background-image: linear-gradient(180deg, #09203f 0%, #0c1a25 74%);
     font-size: 25px;
     font-weight: normal;
 }
+
+@media (max-width: 768px) {
+    .bannerPoster {
+        height: 65vh;
+        background-size: 180%;
+            background-position-y: 100%;
+    }
+
+    @keyframes shrinkFade {
+    0% {
+        background-size: 160%;
+        background-position-y: 50%;
+    }
+
+    100% {
+        background-size: 180%;
+        background-position-y: 100%;
+    }
+}
+}

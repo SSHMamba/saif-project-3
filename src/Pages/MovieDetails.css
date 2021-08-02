@@ -252,10 +252,17 @@ button p:hover {
         width: 750px;
 }
 
-@media (max-width: 1920px) {
+@media (max-width: 1921px) {
 .goBack {
     bottom: 400px;
     position: relative;
+}
+
+.bannerFadeUp {
+    height: 5.4rem;
+background-image: linear-gradient(360deg, #030608 2%, rgb(10, 19, 36) 100%);
+    position:relative;
+    margin:0 auto;
 }
 
 
@@ -269,8 +276,11 @@ button p:hover {
 
 
       .similarWrapper .moviePoster img {
+          max-width: 300px;
+          max-height: 200px;
     width: 300px;
-    height: 180px;
+    height: 200px;
+    margin: -20px;
     
 }
 
@@ -288,5 +298,225 @@ button p:hover {
     left: 175px;
     padding-bottom: 15px;
 }
+
+}
+
+@media (max-width: 1280px) {
+    .bannerFadeUp {
+    height: 3.4rem;
+background-image: linear-gradient(360deg, #030608 2%, rgb(10, 19, 36) 100%);
+    position:relative;
+    margin:0 auto;
+}
+
+.movieDetails {
+    background-size: 140%;
+}
+
+@keyframes shrink {
+    0% {
+        background-size: 120%;
+    }
+
+    100% {
+        background-size: 140%;
+    }
+}
+
+.poster-image {
+    padding: 120px;
+}
+
+.poster-image img {
+    height: 420px;
+    width: 260px;
+}
+
+.detailTitle {
+    font-size: 35px;
+}
+
+.tagline {
+    font-size: 12px;
+}
+
+.date-runtime {
+    font-size: 10px;
+}
+
+.mediaLinks li i {
+    font-size: 25px;
+}
+
+.AddButton, .addedButton {
+    width: 220px;
+}
+
+.AddButton p, .addedButton p {
+    font-size: 12px;
+}
+
+.goBack {
+    bottom: 285px;
+}
+
+.goBack p {
+    font-size: 10px;
+}
+
+
+.similarWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+}
+      .similarWrapper .moviePoster img {
+          max-width: 350px;
+          max-height: 220px;
+    width: 350px;
+    height: 220px;
+    margin: -20px;
+    
+}
+
+    .similarWrapper .moviePoster .movieInfo p,
+    .similarWrapper .moviePoster .movieInfo h2 {
+    width: 315px;
+    text-align: center;
+    
+}
+
+
+
+}
+
+@media (max-width: 768px) {
+.detailsDescription {
+    padding-left: 0px;
+}
+
+.movieDetails {
+    background-size: 180%;
+}
+
+@keyframes shrink {
+    0% {
+        background-size: 160%;
+    }
+
+    100% {
+        background-size: 180%;
+    }
+}
+    .poster-image {
+        padding: 70px;
+    }
+    .poster-image img {
+    height: 370px;
+    width: 250px;
+}
+
+.goBack {
+    bottom: 250px;
+}
+
+
+.detailTitle {
+    font-size: 25px;
+}
+
+.detailsDescription {
+    font-size: 20px;
+}
+
+.voteStyle {
+    font-size: 12px;
+}
+
+.similarTitle h2 {
+        left: 0px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    text-align: center; 
+}
+
+.similarWrapper .title {
+    /* left: 0px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    text-align: center; */
+    left: 0px;
+    right: 0px;
+}
+
+.date-runtime {
+    flex-wrap: wrap;
+}
+
+}
+
+@media (max-width: 420px) {
+    .movieDetails {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        background-size: cover;
+        background-size: 560%;
+        height: 120vh;
+        max-height: 100%;
+    }
+
+
+@keyframes shrink {
+    0% {
+        background-size: 520%;
+    }
+
+    100% {
+        background-size: 560%;
+    }
+}
+
+.detailsDescription {
+    max-width: 100%;
+}
+
+.poster-image {
+    padding: 0px;
+    display: flex;
+    margin: 0 auto;
+
+}
+
+.poster-image img {
+    width: 220px;
+    width: 100%;
+    height: 270px;
+}
+
+.goBack {
+    bottom: 0px;
+    max-width: 100%;
+    width: 150px;
+}
+
+.goBack p {
+    padding: 10px;
+}
+
+.similarTitle {
+    max-width: 100%;
+    width: 350px;
+    left: 0px;
+    right: 0px;
+    padding-left: 0px;
+    margin: 0 auto;
+    line-height: 25px;
+    }
 
 }
